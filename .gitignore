@@ -1,0 +1,6 @@
+# front-end
+.sass-cache
+node_modules
+
+# OSX
+.DS_Store
