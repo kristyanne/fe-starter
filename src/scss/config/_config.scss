@@ -1,0 +1,85 @@
+/*------------------------------------*\
+    #CONFIG
+\*------------------------------------*/
+/**
+ * Project SASS Configuration settings.
+ */
+
+
+
+/*------------------------------------*\
+    #CONFIG-COLOURS
+\*------------------------------------*/
+/**
+ * Common/brand colours that we'll be using throughout
+ * the site.
+ */
+// scss-lint:disable TrailingSemicolon
+@function colour($colour, $shade: 'base') {
+    @return map-get(map-get($colours, $colour), $shade);
+}
+
+$colours: (
+    red: (
+        base: #f00,
+        light: #efa2a2
+    ),
+    blue: (
+        base: #442cf7,
+        light: #adb9f7
+    )
+);
+
+/*------------------------------------*\
+    #CONFIG-TYPE
+\*------------------------------------*/
+/**
+ * Tyography config.
+ *
+ * 1. Bourbon uses this in their rem() mixin.
+ */
+
+$base-font-size:   15px;
+$em-base:          $base-font-size; // [1]
+
+$base-line-height-px: 20px;
+$base-line-height:    $base-line-height-px / $base-font-size;
+
+$base-text-colour: #000;
+$base-link-colour: #000;
+
+$base-font: sans-serif;
+
+
+
+/*------------------------------------*\
+    #CONFIG-DIMENSIONS
+\*------------------------------------*/
+/**
+ * Config options for various components that we may
+ * need to use across files.
+ */
+
+// @function size($keys) {
+//     $value: $sizes;
+
+//     @each $key in $keys {
+//         $value: map-get($value, $key);
+//     }
+
+//     @return $value;
+// }
+
+// $sizes: (
+//     logo: (
+//         mobile: (
+//             width: 89px,
+//             height: 26px
+//         ),
+//         desktop: (
+//             width: 160px,
+//             height: 46px
+//         )
+//     )
+// );
+

@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+/**
+ * Base site styles. Define html and body styles in this file.
+ *
+ * Please don't add any CSS for classed elements to this
+ * file.
+ *
+ * 1. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+
+html {
+    box-sizing: border-box; // [1]
+    font-family: $base-font;
+    font-size: #{($base-font-size / 16px) * 1em};
+    line-height: $base-line-height;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit; // [1]
+}
+
+body {
+    color: $base-text-colour;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: $base-link-colour;
+}

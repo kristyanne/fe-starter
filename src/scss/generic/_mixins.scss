@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+/**
+ * A collection of generic/handy(!) mixins.
+ */
+
+
+
+/*------------------------------------*\
+    #DISPLAY-MIXINS
+\*------------------------------------*/
+/**
+ * Display related mixins.
+ *
+ * 1. Visually hide an element. This is an accessibile way of "hiding" an element from view
+ * while keeping it focusable (http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
+ *
+ * 2. The boubon.io hide-text mixin only works if the element has a width and height so
+ * this one is just better aint it.
+ */
+// [1]
+@mixin visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.visually-hidden {
+    @include visually-hidden;
+}
+
+// [2]
+@mixin text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}

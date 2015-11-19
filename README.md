@@ -1,4 +1,4 @@
-## <Project Name Here>
+## Project Name Here
 
 > Front-end source and usage instructions for the <project name here> Website.
 

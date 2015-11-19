@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    #GRID-CONFIG
+\*------------------------------------*/
+
+/**
+ * 1. Max width of the grid container.
+ * 2. Total number of columns we want in our grid.
+ * 3. Spacing between grid elements.
+ */
+
+@function gridConfig($param) {
+    @return map-get($grid, $param);
+}
+
+$grid: (
+    width: 1366px,    // [1]
+    columns: 12,      // [2]
+    gutter: 30px,     // [3]
+    gutterSmall: 20px // [3]
+);
+
+/**
+ * Breakpoints
+ */
+@function breakpoint($size, $param: min) {
+    @return map-get(map-get($breakpoints, $size), $param);
+}
+
+$breakpoints: (
+    small: (
+        min: 320px,
+        max: 699px
+    ),
+    medium: (
+        min: 700px,
+        max: 959px
+    ),
+    large: (
+        min: 960px
+    )
+);

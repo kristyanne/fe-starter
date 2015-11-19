@@ -1,0 +1,194 @@
+/*------------------------------------*\
+    #GRID
+\*------------------------------------*/
+/**
+ * Responsive grid which allows you to manipluate the layout
+ * based on viewport size.
+ *
+ * Mixins defined in `grid/_mixins.scss`
+ * Configuration defined in `grid/_config.scss`
+ */
+
+
+
+/*------------------------------------*\
+    #IMPORTS
+\*------------------------------------*/
+/**
+ * Import grid config and mixins
+ */
+@import 'config';
+@import 'mixins';
+
+
+/*------------------------------------*\
+    #CORE
+\*------------------------------------*/
+
+/**
+ * Good ol' clearfix :)
+ */
+.clearfix {
+    @include clearfix;
+}
+
+/**
+ * Handy Visibility Helper Classes
+ */
+.visible--small,
+.visible--medium,
+.visible--large {
+    display: none !important;
+}
+
+/**
+ * Grid Wrapper
+ */
+.grid {
+    @include grid-container;
+}
+
+/**
+ * Default Grid
+ */
+@include screen-bigger-than(breakpoint(medium)) {
+    .grid__row {
+        @include grid-row;
+    }
+
+    .grid__col {
+        @include grid-col;
+
+        .grid--reverse & {
+            float: right;
+        }
+    }
+
+    @for $i from 1 through gridConfig(columns) {
+        .span-#{$i} {
+            @include grid-span($i);
+        }
+
+        .offset-#{$i} {
+            @include grid-offset($i);
+        }
+    }
+
+    @for $i from 1 through gridConfig(columns) {
+        $nth: $i + 1;
+
+        .per-row-#{$i} {
+            .grid__col:nth-child(#{$i}n + #{$nth}) {
+                clear: left;
+            }
+        }
+    }
+}
+
+/**
+ * Medium Viewport only Grid
+ *
+ * >= medium, < large
+ */
+@include screen-between(breakpoint(medium), breakpoint(large)) {
+    @for $i from 1 through gridConfig(columns) {
+        .medium--span-#{$i} {
+            @include grid-span($i);
+        }
+
+        .medium--offset-#{$i} {
+            @include grid-offset($i);
+        }
+    }
+
+    .visible--medium {
+        display: block !important;
+    }
+
+    @for $i from 1 through gridConfig(columns) {
+        $nth: $i + 1;
+
+        .medium--per-row-#{$i} {
+            .grid__col:nth-child(#{$i}n + #{$nth}) {
+                clear: left;
+            }
+        }
+    }
+}
+
+/**
+ * Large Viewport only Grid
+ *
+ * >= large
+ */
+@include screen-bigger-than(breakpoint(large)) {
+    @for $i from 1 through gridConfig(columns) {
+        .large--span-#{$i} {
+            @include grid-span($i);
+        }
+
+        .large--offset-#{$i} {
+            @include grid-offset($i);
+        }
+    }
+
+    .visible--large {
+        display: block !important;
+    }
+
+    @for $i from 1 through gridConfig(columns) {
+        $nth: $i + 1;
+
+        .large--per-row-#{$i} {
+            .grid__col:nth-child(#{$i}n + #{$nth}) {
+                clear: left;
+            }
+        }
+    }
+}
+
+/**
+ * Small only Grid
+ */
+@include screen-smaller-than(breakpoint(small, max)) {
+    .grid {
+        padding-left: gridConfig(gutterSmall);
+        padding-right: gridConfig(gutterSmall);
+    }
+
+    .grid--small {
+        .grid__row {
+            @include grid-row;
+
+            margin-left: (gridConfig(gutterSmall) / -2);
+            margin-right: (gridConfig(gutterSmall) / -2);
+        }
+
+        .grid__col {
+            @include grid-col;
+
+            padding-left: gridConfig(gutterSmall);
+            padding-right: gridConfig(gutterSmall);
+        }
+    }
+
+    @for $i from 1 through gridConfig(columns) {
+        .small--span-#{$i} {
+            @include grid-span($i);
+        }
+    }
+
+    .visible--small {
+        display: block !important;
+    }
+
+    @for $i from 1 through gridConfig(columns) {
+        $nth: $i + 1;
+
+        .small--per-row-#{$i} {
+            .grid__col:nth-child(#{$i}n + #{$nth}) {
+                clear: left;
+            }
+        }
+    }
+}
