@@ -16,6 +16,6 @@ var config = require('../config').jshint;
 gulp.task('jshint', function() {
     gulp.src(config.src)
         .pipe(cached('jshint'))
-        .pipe(jshint())
+        .pipe(jshint('./.jshintrc'))
         .pipe(jshint.reporter(stylish));
 });
