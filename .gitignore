@@ -1,6 +1,7 @@
 # front-end
 .sass-cache
 node_modules
+dist
 
 # auto generated files
 src/scss/config/_icons.scss
