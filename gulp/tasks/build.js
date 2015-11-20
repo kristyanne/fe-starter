@@ -18,7 +18,7 @@ var buildTasks = [
     'sass',
     'html',
     'jshint',
-    'js:templates',
+    //'js:templates',
     'browserify',
     'js:vendor'
 ];

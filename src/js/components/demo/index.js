@@ -1,6 +1,6 @@
 var $ = require('jquery');
 
-var tpl = require('../../lib/templates');
+//var tpl = require('../../lib/templates');
 
 /**
  * demo/index.js
@@ -15,17 +15,17 @@ module.exports = (function() {
 
         console.log( $el, 'oh well hello there!');
 
-        tplDemo();
+        //tplDemo();
     };
 
     /**
      * Example usage of the precompiled .hbs templates.
      */
-    var tplDemo = function tplDemo() {
-        var alert = tpl.alert({ message: 'This is a message this is.' });
+    // var tplDemo = function tplDemo() {
+    //     var alert = tpl.alert({ message: 'This is a message this is.' });
 
-        $(alert).appendTo($el);
-    };
+    //     $(alert).appendTo($el);
+    // };
 
     return {
         init: init
