@@ -32,6 +32,15 @@ var config = {
         dest: paths.dist + '/html'
     },
 
+    icons: {
+        src: paths.src + '/svg/icons/**/*.svg',
+        dest: paths.dist + '/fonts/icons',
+        template: {
+            src: './gulp/templates/_icons.scss',
+            dest: paths.src + '/scss/config'
+        }
+    },
+
     imagemin: {
         src: paths.src + '/img/**/*.{png,jpg,jpeg,gif,ico}',
         dest: paths.dist + '/img'

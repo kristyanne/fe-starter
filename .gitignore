@@ -2,5 +2,9 @@
 .sass-cache
 node_modules
 
+# auto generated files
+src/scss/config/_icons.scss
+src/js/lib/templates.js
+
 # OSX
 .DS_Store

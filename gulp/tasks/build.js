@@ -7,16 +7,18 @@
  */
 
 var gulp  = require('gulp');
-var noop  = require('gulp-util').noop;
-var utils = require('../lib/utils');
+//var noop  = require('gulp-util').noop;
+//var utils = require('../lib/utils');
 
-var config = require('../config').production;
+//var config = require('../config').production;
 
 var buildTasks = [
     'images',
+    'icons',
     'sass',
     'html',
     'jshint',
+    'js:templates',
     'browserify',
     'js:vendor'
 ];
