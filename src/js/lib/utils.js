@@ -12,7 +12,7 @@ var Utils = {
      * @return {Boolean} [true|false]
      */
     isLocal: function() {
-        return window.location.hostname === 'localhost';
+        return 'html' === window.location.pathname.split('.').pop();
     },
 
     /**
