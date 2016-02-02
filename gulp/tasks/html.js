@@ -21,7 +21,7 @@ gulp.task('html', function() {
             helpers: config.helpers,
             partials: config.partials,
             data: config.data,
-            debug: true
+            debug: false
         }))
         .on('error', handleError)
         .pipe(gulp.dest(config.dest))

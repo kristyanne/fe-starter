@@ -12,9 +12,9 @@
 
 html {
     box-sizing: border-box; // [1]
-    font-family: $base-font;
-    font-size: #{($base-font-size / 16px) * 1em};
-    line-height: $base-line-height;
+    font-family: Helvetica, arial, sans-serif;
+    font-size: #{(base-config(fontSize) / 16px) * 1em};
+    line-height: base-config(lineHeight);
 }
 
 *,
@@ -24,7 +24,8 @@ html {
 }
 
 body {
-    color: $base-text-colour;
+    background: base-config(background);
+    color: base-config(textColour);
 }
 
 img {
@@ -32,5 +33,5 @@ img {
 }
 
 a {
-    color: $base-link-colour;
+    color: base-config(linkColour);
 }
