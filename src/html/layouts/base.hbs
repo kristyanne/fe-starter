@@ -8,9 +8,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/css/main.min.css">
+    <link rel="stylesheet" href="{{ config.paths.css }}/main.min.css">
 
-    <script src="/js/modernizr.min.js"></script>
+    <script src="{{ config.paths.js }}/modernizr.min.js"></script>
 </head>
 <body>
     <header>
@@ -21,13 +21,11 @@
         {{#block "content"}}{{/block}}
     </main><!-- .main -->
 
-    <footer>
-        &copy;2015
-    </footer>
+    <footer>&copy;2015</footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="{{ config.paths.js }}/jquery.min.js"><\/script>')</script>
 
-    <script src="/js/main.js"></script>
+    <script src="{{ config.paths.js }}/main.js"></script>
 </body>
 </html>

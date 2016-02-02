@@ -42,9 +42,9 @@
     @include clearfix;
 
     box-sizing: border-box;
-    max-width: gridConfig(width);
-    padding-left: gridConfig(gutter);
-    padding-right: gridConfig(gutter);
+    max-width: grid-config(width);
+    padding-left: grid-config(gutter);
+    padding-right: grid-config(gutter);
     margin: 0 auto;
 }
 
@@ -52,23 +52,23 @@
     @include clearfix;
 
     box-sizing: border-box;
-    margin-left: (gridConfig(gutter) / -2);
-    margin-right: (gridConfig(gutter) / -2);
+    margin-left: (grid-config(gutter) / -2);
+    margin-right: (grid-config(gutter) / -2);
 }
 
 @mixin grid-col {
     box-sizing: border-box;
     float: left;
     min-height: 1px;
-    padding-left: (gridConfig(gutter) / 2);
-    padding-right: (gridConfig(gutter) / 2);
+    padding-left: (grid-config(gutter) / 2);
+    padding-right: (grid-config(gutter) / 2);
     position: relative;
 }
 
 @mixin grid-span($cols) {
-    width: percentage(($cols / gridConfig(columns)));
+    width: percentage(($cols / grid-config(columns)));
 }
 
 @mixin grid-offset($cols) {
-    margin-left: percentage(($cols / gridConfig(columns)));
+    margin-left: percentage(($cols / grid-config(columns)));
 }

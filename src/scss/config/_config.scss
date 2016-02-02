@@ -30,56 +30,30 @@ $colours: (
     )
 );
 
+
+
 /*------------------------------------*\
-    #CONFIG-TYPE
+    #CONFIG-BASE
 \*------------------------------------*/
 /**
- * Tyography config.
+ * Base config.
  *
- * 1. Bourbon uses this in their rem() mixin.
+ * 1. lineHeightPX / fontSize
+ * 2. Bourbon uses this in their rem() mixin.
  */
+@function base-config($param) {
+    @return map-get($conf, $param);
+}
 
-$base-font-size:   15px;
-$em-base:          $base-font-size; // [1]
+$conf: (
+    fontSize:     16px,
+    lineHeightPX: 20px,
+    lineHeight:   20px / 16px, // [1]
+    textColour:   #000,
+    linkColour:   #000,
+    baseFont:     sans-serif,
+    background:   #fff
+);
 
-$base-line-height-px: 20px;
-$base-line-height:    $base-line-height-px / $base-font-size;
-
-$base-text-colour: #000;
-$base-link-colour: #000;
-
-$base-font: sans-serif;
-
-
-
-/*------------------------------------*\
-    #CONFIG-DIMENSIONS
-\*------------------------------------*/
-/**
- * Config options for various components that we may
- * need to use across files.
- */
-
-// @function size($keys) {
-//     $value: $sizes;
-
-//     @each $key in $keys {
-//         $value: map-get($value, $key);
-//     }
-
-//     @return $value;
-// }
-
-// $sizes: (
-//     logo: (
-//         mobile: (
-//             width: 89px,
-//             height: 26px
-//         ),
-//         desktop: (
-//             width: 160px,
-//             height: 46px
-//         )
-//     )
-// );
+$em-base: base-config(fontSize); // [2]
 

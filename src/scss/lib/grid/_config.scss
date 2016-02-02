@@ -13,9 +13,9 @@
 }
 
 $grid: (
-    width: 1366px,    // [1]
+    width: 1200px,    // [1]
     columns: 12,      // [2]
-    gutter: 30px,     // [3]
+    gutter: 15px,     // [3]
     gutterSmall: 20px // [3]
 );
 
@@ -29,13 +29,13 @@ $grid: (
 $breakpoints: (
     small: (
         min: 320px,
-        max: 699px
+        max: 740px
     ),
     medium: (
-        min: 700px,
-        max: 959px
+        min: 741px,
+        max: 900px
     ),
     large: (
-        min: 960px
+        min: 901px
     )
 );
