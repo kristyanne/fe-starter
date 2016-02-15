@@ -18,6 +18,15 @@ var config = {
         baseDir: [ paths.dist + '/html', paths.dist ]
     },
 
+    css: {
+        watchSrc:  paths.src + '/scss/**/*.scss',
+        src: [
+            paths.src + '/scss/**/*.scss',
+            '!' + paths.src + '/scss/**/_*.scss'
+        ],
+        dest: paths.dist + '/css'
+    },
+
     fonts: {
         src: paths.src + '/fonts/**/*.{eot,svg,ttf,woff}',
         dest: paths.dist + '/fonts'
@@ -68,15 +77,6 @@ var config = {
             '!' + paths.src + '/js/plugins/**',
             '!' + paths.src + '/js/lib/templates.js'
         ]
-    },
-
-    sass: {
-        watchSrc:  paths.src + '/scss/**/*.scss',
-        src: [
-            paths.src + '/scss/**/*.scss',
-            '!' + paths.src + '/scss/**/_*.scss'
-        ],
-        dest: paths.dist + '/css'
     },
 
     scssLint: {

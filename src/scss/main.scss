@@ -12,8 +12,7 @@
  * Grid:      n/a
  */
 @import 'bourbon';
-@import 'lib/normalize/normalize';
-@import 'lib/grid/grid';
+@import 'normalize';
 
 
 
@@ -42,7 +41,9 @@
  * Import base/generic files.
  */
 @import 'base/base';
-@import 'generic/icons';
+@import 'base/form';
+@import 'base/nav';
+@import 'generic/grid';
 
 
 

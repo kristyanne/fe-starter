@@ -11,7 +11,7 @@ var config = require('../config');
 
 gulp.task('watch', ['build', 'watchify', 'browsersync'], function() {
     // .scss
-    gulp.watch(config.sass.watchSrc, ['sass']);
+    gulp.watch(config.css.watchSrc, ['sass']);
 
     // .html
     gulp.watch(config.html.path + '/**/*.{html,hbs}', ['html']);

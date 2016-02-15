@@ -20,8 +20,7 @@ gulp.task('html', function() {
             bustCache: true,
             helpers: config.helpers,
             partials: config.partials,
-            data: config.data,
-            debug: false
+            data: config.data
         }))
         .on('error', handleError)
         .pipe(gulp.dest(config.dest))

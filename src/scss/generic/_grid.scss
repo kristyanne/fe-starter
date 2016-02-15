@@ -4,46 +4,54 @@
 /**
  * Responsive grid which allows you to manipluate the layout
  * based on viewport size.
- *
- * Mixins defined in `grid/_mixins.scss`
- * Configuration defined in `grid/_config.scss`
  */
 
 
 
 /*------------------------------------*\
-    #IMPORTS
-\*------------------------------------*/
-/**
- * Import grid config and mixins
- */
-@import 'config';
-@import 'mixins';
-
-
-/*------------------------------------*\
-    #CORE
+    #GRID-MIXINS
 \*------------------------------------*/
 
-/**
- * Good ol' clearfix :)
- */
-.clearfix {
+@mixin grid-container {
     @include clearfix;
+
+    box-sizing: border-box;
+    max-width: grid-config(width);
+    padding-left: grid-config(gutter) * 2;
+    padding-right: grid-config(gutter) * 2;
+    margin: 0 auto;
 }
 
-/**
- * Handy Visibility Helper Classes
- */
-.visible--small,
-.visible--medium,
-.visible--large {
-    display: none !important;
+@mixin grid-row {
+    @include clearfix;
+
+    box-sizing: border-box;
+    margin-left: (grid-config(gutter) / -1);
+    margin-right: (grid-config(gutter) / -1);
 }
 
-/**
- * Grid Wrapper
- */
+@mixin grid-col {
+    box-sizing: border-box;
+    float: left;
+    min-height: 1px;
+    padding-left: (grid-config(gutter));
+    padding-right: (grid-config(gutter));
+    position: relative;
+}
+
+@mixin grid-span($cols) {
+    width: percentage(($cols / grid-config(columns)));
+}
+
+@mixin grid-offset($cols) {
+    margin-left: percentage(($cols / grid-config(columns)));
+}
+
+
+
+/*------------------------------------*\
+    #GRID-CORE
+\*------------------------------------*/
 .grid {
     @include grid-container;
 }
@@ -64,7 +72,7 @@
         }
     }
 
-    @for $i from 1 through gridConfig(columns) {
+    @for $i from 1 through grid-config(columns) {
         .span-#{$i} {
             @include grid-span($i);
         }
@@ -74,7 +82,7 @@
         }
     }
 
-    @for $i from 1 through gridConfig(columns) {
+    @for $i from 1 through grid-config(columns) {
         $nth: $i + 1;
 
         .per-row-#{$i} {
@@ -86,12 +94,10 @@
 }
 
 /**
- * Medium Viewport only Grid
- *
- * >= medium, < large
+ * Medium Viewport Grid
  */
 @include screen-between(breakpoint(medium), breakpoint(large)) {
-    @for $i from 1 through gridConfig(columns) {
+    @for $i from 1 through grid-config(columns) {
         .medium--span-#{$i} {
             @include grid-span($i);
         }
@@ -101,11 +107,7 @@
         }
     }
 
-    .visible--medium {
-        display: block !important;
-    }
-
-    @for $i from 1 through gridConfig(columns) {
+    @for $i from 1 through grid-config(columns) {
         $nth: $i + 1;
 
         .medium--per-row-#{$i} {
@@ -117,12 +119,10 @@
 }
 
 /**
- * Large Viewport only Grid
- *
- * >= large
+ * Large Viewport Grid
  */
 @include screen-bigger-than(breakpoint(large)) {
-    @for $i from 1 through gridConfig(columns) {
+    @for $i from 1 through grid-config(columns) {
         .large--span-#{$i} {
             @include grid-span($i);
         }
@@ -132,11 +132,7 @@
         }
     }
 
-    .visible--large {
-        display: block !important;
-    }
-
-    @for $i from 1 through gridConfig(columns) {
+    @for $i from 1 through grid-config(columns) {
         $nth: $i + 1;
 
         .large--per-row-#{$i} {
@@ -152,37 +148,33 @@
  */
 @include screen-smaller-than(breakpoint(small, max)) {
     .grid {
-        padding-left: gridConfig(gutterSmall);
-        padding-right: gridConfig(gutterSmall);
+        padding-left: grid-config(gutterSmall);
+        padding-right: grid-config(gutterSmall);
     }
 
     .grid--small {
         .grid__row {
             @include grid-row;
 
-            margin-left: (gridConfig(gutterSmall) / -2);
-            margin-right: (gridConfig(gutterSmall) / -2);
+            margin-left: (grid-config(gutterSmall) / -2);
+            margin-right: (grid-config(gutterSmall) / -2);
         }
 
         .grid__col {
             @include grid-col;
 
-            padding-left: gridConfig(gutterSmall);
-            padding-right: gridConfig(gutterSmall);
+            padding-left: grid-config(gutterSmall);
+            padding-right: grid-config(gutterSmall);
         }
     }
 
-    @for $i from 1 through gridConfig(columns) {
+    @for $i from 1 through grid-config(columns) {
         .small--span-#{$i} {
             @include grid-span($i);
         }
     }
 
-    .visible--small {
-        display: block !important;
-    }
-
-    @for $i from 1 through gridConfig(columns) {
+    @for $i from 1 through grid-config(columns) {
         $nth: $i + 1;
 
         .small--per-row-#{$i} {
@@ -192,3 +184,4 @@
         }
     }
 }
+

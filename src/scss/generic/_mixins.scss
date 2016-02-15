@@ -18,6 +18,9 @@
  *
  * 2. The boubon.io hide-text mixin only works if the element has a width and height so
  * this one is just better aint it.
+ *
+ * 3. http://bourbon.io/docs/#clearfix
+ *
  */
 // [1]
 @mixin visually-hidden {
@@ -42,4 +45,35 @@
     text-shadow: none;
     background-color: transparent;
     border: 0;
+}
+
+// [3]
+.clearfix {
+    @include clearfix;
+}
+
+
+
+/*------------------------------------*\
+    #MEDIA-QUERY-MIXINS
+\*------------------------------------*/
+/**
+ * Handy media query mixin util.
+ */
+@mixin screen-bigger-than($width) {
+    @media screen and (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin screen-smaller-than($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin screen-between($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max - 1) {
+        @content;
+    }
 }
