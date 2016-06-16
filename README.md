@@ -69,3 +69,7 @@ The main differences when building for production mode:
 
 - sass-maps will not be included.
 - JS will be minified source maps will be exluded.
+
+## TODO's/Improvements
+1. Have added task and dependencies for stylelint (postcss linting). Keeping scss-lint for now too incase it's crap but if it works out then we can remove the Ruby/Bundler dependencies. Exciting.
+2. jQuery - consider removing this, I would like to get to a place where it's not needed (Get better at ES6, Kristy. God.). Plugins may need it though...
