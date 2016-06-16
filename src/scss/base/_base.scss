@@ -13,19 +13,19 @@
 html {
     box-sizing: border-box; // [1]
     font-family: Helvetica, arial, sans-serif;
-    font-size: #{(base-config(fontSize) / 16px) * 1em};
-    line-height: base-config(lineHeight);
+    font-size: #{(base-config(font-size) / 16px) * 1em};
+    line-height: base-config(line-height);
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     box-sizing: inherit; // [1]
 }
 
 body {
     background: base-config(background);
-    color: base-config(textColour);
+    color: base-config(text-colour);
 }
 
 img {
@@ -33,5 +33,5 @@ img {
 }
 
 a {
-    color: base-config(linkColour);
+    color: base-config(link-colour);
 }

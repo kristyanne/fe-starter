@@ -10,7 +10,6 @@ var gulp  = require('gulp');
 
 var buildTasks = [
     'images',
-    'icons',
     'css',
     'html',
     'jshint',

@@ -27,6 +27,14 @@ var config = {
         dest: paths.dist + '/css'
     },
 
+    cssLint: {
+        src: [
+            paths.src + '/scss/**/*.scss',
+            '!' + paths.src + '/scss/lib/**/*',
+            '!' + paths.src + '/scss/plugins/**/*'
+        ]
+    },
+
     fonts: {
         src: paths.src + '/fonts/**/*.{eot,svg,ttf,woff}',
         dest: paths.dist + '/fonts'
@@ -39,15 +47,6 @@ var config = {
         partials: paths.src + '/html/{layouts,partials}/**/*.{html,hbs}',
         data: paths.src + '/html/data/**/*.{js,json}',
         dest: paths.dist + '/html'
-    },
-
-    icons: {
-        src: paths.src + '/svg/icons/**/*.svg',
-        dest: paths.dist + '/fonts/icons',
-        template: {
-            src: './gulp/templates/_icons.scss',
-            dest: paths.src + '/scss/config'
-        }
     },
 
     imagemin: {

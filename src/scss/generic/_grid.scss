@@ -148,23 +148,23 @@
  */
 @include screen-smaller-than(breakpoint(small, max)) {
     .grid {
-        padding-left: grid-config(gutterSmall);
-        padding-right: grid-config(gutterSmall);
+        padding-left: grid-config(gutter-small);
+        padding-right: grid-config(gutter-small);
     }
 
     .grid--small {
         .grid__row {
             @include grid-row;
 
-            margin-left: (grid-config(gutterSmall) / -2);
-            margin-right: (grid-config(gutterSmall) / -2);
+            margin-left: (grid-config(gutter-small) / -2);
+            margin-right: (grid-config(gutter-small) / -2);
         }
 
         .grid__col {
             @include grid-col;
 
-            padding-left: grid-config(gutterSmall);
-            padding-right: grid-config(gutterSmall);
+            padding-left: grid-config(gutter-small);
+            padding-right: grid-config(gutter-small);
         }
     }
 

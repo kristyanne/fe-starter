@@ -69,7 +69,7 @@
 @each $glyph in $icon-glyphs {
     $icon: nth($glyph, 1);
 
-    &.icon--#{$icon}:before {
+    &.icon--#{$icon}::before {
         @extend %icon-#{$icon};
     }
 }

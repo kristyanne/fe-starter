@@ -73,7 +73,10 @@
 }
 
 @mixin screen-between($min, $max) {
+    /* there seems to be a linting bug with calculations in MQ (https://github.com/stylelint/stylelint/issues/742) */
+    /* stylelint-disable */
     @media screen and (min-width: $min) and (max-width: $max - 1) {
         @content;
     }
+    /* stylelint-enable */
 }

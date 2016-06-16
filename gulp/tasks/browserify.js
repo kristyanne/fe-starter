@@ -17,12 +17,15 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
-var assign = require('lodash.assign');
 var uglify = require('gulp-uglify');
 
+// Config and Utils.
 var config = require('../config').js.browserify;
 var noop  = require('gulp-util').noop;
 var utils = require('../lib/utils');
+
+// Lodash Includes.
+var _assign = require('lodash').assign;
 
 // Define custom browserify config options here.
 //
@@ -36,9 +39,9 @@ var bundleTask = function( devMode ) {
     var options;
 
     if(devMode) {
-        options = assign({}, watchify.args, customOpts);
+        options = _assign({}, watchify.args, customOpts);
     } else {
-        options = assign({}, customOpts);
+        options = _assign({}, customOpts);
     }
 
     var b = browserify( options );
