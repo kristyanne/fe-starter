@@ -7,7 +7,7 @@
  * here for now but eventually it might be worth splitting them out.
  */
 
-var utils = {
+var Utils = {
     vaguePath: function( path ) {
         if(!path) { return; }
         return '.../' + path.split('/').slice(-3).join('/');
@@ -24,4 +24,4 @@ var utils = {
     }
 };
 
-module.exports = utils;
+module.exports = Utils;

@@ -2,6 +2,8 @@
  * bh-repeat.js Handlebars Helper
  * ------------------------------
  * Repeat array x number of times.
+ *
+ * HB Usage: {{#each (repeat array_here 2)}}{{/each}}
  */
 module.exports.register = function(Handlebars) {
     'use strict';

@@ -13,9 +13,9 @@ var concat = require('gulp-concat');
 var declare = require('gulp-declare');
 var hb = require('gulp-handlebars');
 
-var config = require('../config').js.templates;
+var config = require('../config').js.handlebars;
 
-gulp.task('js:templates', function() {
+gulp.task('handlebars', function() {
     gulp.src(config.src)
         .pipe(hb({
             handlebars: require('handlebars')

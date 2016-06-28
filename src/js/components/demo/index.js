@@ -1,31 +1,28 @@
-var $ = require('jquery');
-
-//var tpl = require('../../lib/templates');
-
 /**
  * demo/index.js
  * -------------
  * Just a demo component, that's all :)
  */
 module.exports = (function() {
-    var $el = $('.js-demo');
-
-    var init = function init() {
-        if(!$el.length) { return; }
-
-        console.log( $el, 'oh well hello there!');
-
-        //tplDemo();
+    var selectors = {
+        el: 'js-demo'
     };
 
-    /**
-     * Example usage of the precompiled .hbs templates.
-     */
-    // var tplDemo = function tplDemo() {
-    //     var alert = tpl.alert({ message: 'This is a message this is.' });
+    var component;
 
-    //     $(alert).appendTo($el);
-    // };
+    var init = function() {
+        var el = document.getElementsByClassName(selectors.el);
+
+        if(!el.length) {
+            console.log('nothing to do here, bye.');
+            return;
+        }
+
+        component = el[0];
+
+        console.log(component, 'component found!');
+        component.innerHTML = 'Hello, this is a JS demo :)';
+    };
 
     return {
         init: init

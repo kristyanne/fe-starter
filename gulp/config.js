@@ -57,15 +57,15 @@ var config = {
     js: {
         browserify: {
             src: paths.src + '/js/main.js',
-            dest: paths.dist + '/js'
+            dest: paths.dist + '/js',
+        },
+        handlebars: {
+            src: paths.src + '/js/tpl/**/*.hbs',
+            dest: paths.src + '/js/lib'
         },
         vendor: {
             src: paths.src + '/js/vendor/**/*.js',
             dest: paths.dist + '/js'
-        },
-        templates: {
-            src: paths.src + '/js/tpl/**/*.hbs',
-            dest: paths.src + '/js/lib'
         }
     },
 

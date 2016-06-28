@@ -24,9 +24,9 @@ var noop  = require('gulp-util').noop;
 var utils = require('../lib/utils');
 
 // Task Declaration
-gulp.task('css', ['scsslint'], function() {
+gulp.task('css', ['css-lint'], function() {
     var processors = [
-        autoprefixer({browsers: ['last 2 versions', '> 1%', 'ie >= 9']})
+        autoprefixer({browsers: ['last 2 versions', '> 1%', 'ie >= 10']})
     ];
 
     if(!utils.isDev()) {

@@ -41,7 +41,7 @@ The Gulp tasks for this project are broken out into individual task files in ./g
 
 Each task can be ran individually when needed, however, there are a set of build/dev tasks that will be explained in (a little bit) more detail below:
 
-### Watch
+### Watching
 
 This task is to be used during local development:
 
@@ -51,15 +51,15 @@ This task is to be used during local development:
 - Start a local dev server (`gulp browsersync`)
 - Start watching for file changes.
 
-### Build
+### Building
 
 The build task will clean out and re-build all the assets for the static front-end:
 
 `gulp build`
 
-This command also utilises the NODE_ENV environment variable which will allow us to detect the environment that we're building for. Currently, this project only supports `dev` or `production` environments.
+This command also utilises the NODE_ENV environment variable which will allow us to detect the environment that we're building for. Currently, this project only supports `dev` or `production` environments (`dev` is the default).
 
-### Production Build
+#### Production Build
 
 For a production build (e.g. on dev/QA servers), run this command:
 
@@ -67,8 +67,8 @@ For a production build (e.g. on dev/QA servers), run this command:
 
 The main differences when building for production mode:
 
-- sass-maps will not be included.
-- JS will be minified source maps will be exluded.
+- CSS will be minified and source maps exluded.
+- JS will be minified and source maps exluded.
 
 ## TODO's/Improvements
 1. Have added task and dependencies for stylelint (postcss linting). Keeping scss-lint for now too incase it's crap but if it works out then we can remove the Ruby/Bundler dependencies. Exciting.
