@@ -9,12 +9,12 @@
 var gulp  = require('gulp');
 
 var buildTasks = [
-    'images',
     'css',
     'html',
     'jshint',
     'browserify',
-    'js:vendor'
+    'js:vendor',
+    'images'
 ];
 
 gulp.task('build', buildTasks);
