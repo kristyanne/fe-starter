@@ -14,7 +14,7 @@ var config = require('../config').imagemin;
 
 gulp.task('images', function() {
     return gulp.src(config.src)
-        .pipe(cached('imagemin'))
+        .pipe(cached('images'))
         .pipe(imagemin({
             optimizationLevel: 7,
             progressive: true

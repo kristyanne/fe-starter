@@ -25,16 +25,6 @@ In order to run the Gulp tasks, you'll need to install the project dependencies.
 
 `npm install`
 
-### Install Gems
-
-Ruby gem dependencies are installed using [Bundler](http://bundler.io/) and defined in /Gemfile. To install this, just run the following command:
-
-`gem install bundler`
-
-Once Bundler is installed, we can then install our project gems by running the following command:
-
-`bundle install`
-
 ## Gulp Tasks
 
 The Gulp tasks for this project are broken out into individual task files in ./gulp/tasks. Each file will (or should!) have a brief comment explaining how to run it and what it does. If it doesn't then MY BAD.

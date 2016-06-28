@@ -76,14 +76,6 @@ var config = {
             '!' + paths.src + '/js/plugins/**',
             '!' + paths.src + '/js/lib/templates.js'
         ]
-    },
-
-    scssLint: {
-        src: [
-            paths.src + '/scss/**/*.scss',
-            '!' + paths.src + '/scss/lib/**/*',
-            '!' + paths.src + '/scss/plugins/**/*'
-        ]
     }
 };
 
