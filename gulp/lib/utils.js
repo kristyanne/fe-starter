@@ -17,10 +17,6 @@ var Utils = {
         var env = process.env.NODE_ENV || 'development';
 
         return 'development' === env;
-    },
-
-    cleanFirst: function() {
-        return !this.isDev() ? ['clean'] : [];
     }
 };
 

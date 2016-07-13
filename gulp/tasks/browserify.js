@@ -1,9 +1,7 @@
 /**
- * browserify.js
- * -------------
- * `gulp js:bundle`
+ * `gulp browserify`
  *
- * Run browserify (or watchify if in DEV mode), uglify and then rename.
+ * Bundle and minify the JS.
  *
  * Heavily "inspired" by:
  * https://github.com/gulpjs/gulp/blob/master/docs/recipes/fast-browserify-builds-with-watchify.md

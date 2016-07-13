@@ -1,6 +1,4 @@
 /**
- * watchify.js
- * -----------
  * `gulp watchify`
  *
  * Use watchify with Browserify to bundle our JS.

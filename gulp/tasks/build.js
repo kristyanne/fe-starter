@@ -1,9 +1,5 @@
 /**
- * build.js
- * --------
  * `gulp build`
- *
- *  BUILD OVERLORD. Run this to compile all the things.
  */
 
 var gulp  = require('gulp');
@@ -13,7 +9,7 @@ var buildTasks = [
     'html',
     'jshint',
     'browserify',
-    'js:vendor',
+    //'js:vendor',
     'images'
 ];
 

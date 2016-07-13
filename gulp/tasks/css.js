@@ -1,30 +1,26 @@
 /**
- * sass.js
- * -------
  * `gulp sass`
  *
- * Compile SASS, add sourcemaps, run autoprefixer on compiled CSS
- * and minify.
+ * Compile, prefix and minify stylesheets.
  */
 
-// Import Plugins
+// Import Dependencies
 var gulp = require('gulp');
-var browserSync = require('browser-sync');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
+var bs = require('browser-sync');
 
 // Import Utils & Configs
 var config = require('../config').css;
-var handleError = require('../lib/handleError');
 var noop  = require('gulp-util').noop;
 var utils = require('../lib/utils');
 
 // Task Declaration
-gulp.task('css', ['css-lint'], function() {
+gulp.task('css', ['csslint'], function() {
     var processors = [
         autoprefixer({browsers: ['last 2 versions', '> 1%', 'ie >= 10']})
     ];
@@ -40,13 +36,12 @@ gulp.task('css', ['css-lint'], function() {
                 require('node-bourbon').includePaths,
                 './node_modules/normalize.css'
             ]
-        }))
-        .on('error', handleError)
+        }).on('error', sass.logError))
         .pipe(postcss(processors))
-        .pipe(utils.isDev() ? sourcemaps.write() : noop())
+        .pipe(utils.isDev() ? sourcemaps.write('./') : noop())
         .pipe(rename({extname: '.min.css'}))
         .pipe(gulp.dest(config.dest))
-        .pipe(browserSync.reload({ stream: true }));
+        .pipe(bs.reload({ stream: true }));
 });
 
 

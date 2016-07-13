@@ -1,6 +1,4 @@
 /**
- * js-vendor.js
- * ------------
  * `gulp js:vendor`
  *
  * Copy pre-minified JS libs.

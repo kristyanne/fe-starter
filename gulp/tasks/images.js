@@ -1,23 +1,21 @@
 /**
- * imagemin.js
- * -----------
  * `gulp images`
+ * Optimise and copy image files.
  *
- * Minify and copy images. That is all.
+ * 1. TODO: This seems high (default is 3). Maybe try out lower values and compare result.
  */
 
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var cached = require('gulp-cached');
-
-var config = require('../config').imagemin;
+var conf = require('../config').imagemin;
 
 gulp.task('images', function() {
-    return gulp.src(config.src)
+    return gulp.src(conf.src)
         .pipe(cached('images'))
         .pipe(imagemin({
-            optimizationLevel: 7,
+            optimizationLevel: 7, // [1]
             progressive: true
         }))
-        .pipe(gulp.dest(config.dest));
+        .pipe(gulp.dest(conf.dest));
 });

@@ -1,15 +1,12 @@
 /**
- * watch.js
- * --------
  * `gulp watch`
- *
- * Watches files and folders for changes.
+ * Starts local dev server and watches files and folders for changes.
  */
 
 var gulp = require('gulp');
 var config = require('../config');
 
-gulp.task('watch', ['build', 'watchify', 'browsersync'], function() {
+gulp.task('watch', ['build', 'watchify', 'serve'], function() {
     // .scss
     gulp.watch(config.css.watchSrc, ['sass']);
 

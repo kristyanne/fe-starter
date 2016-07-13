@@ -1,10 +1,7 @@
 /**
- * html.js
- * -------
  * `gulp html`
  *
- * Compile HTML.
- * Uses the handlebars templating engine.
+ * Compile HTML from Handlebars templates.
  */
 
 var gulp = require('gulp');

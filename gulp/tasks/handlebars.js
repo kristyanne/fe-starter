@@ -1,7 +1,5 @@
 /**
- * js-templates.js
- * ---------------
- * `gulp js:templates`
+ * `gulp handlebars`
  *
  * Precompile hbs templates into JS for use with Browserify.
  * https://github.com/lazd/gulp-handlebars/tree/master/examples/singleModule

@@ -1,22 +1,19 @@
 /**
- * browsersync.js
- * --------------
- * `gulp browsersync`
- *
+ * `gulp serve`
  * Runs a local static web server (http://www.browsersync.io).
  */
 
 var gulp = require('gulp');
-var browserSync = require('browser-sync');
+var bs = require('browser-sync');
 var config = require('../config').browserSync;
 
-gulp.task('browsersync', function() {
-    return browserSync({
+gulp.task('serve', function() {
+    return bs({
         server: {
-            baseDir:   config.baseDir,
+            baseDir: config.baseDir,
             directory: true
         },
         ghostMode: false,
-        notify:    true
+        notify: true
     });
 });

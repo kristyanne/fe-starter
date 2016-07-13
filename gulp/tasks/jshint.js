@@ -1,6 +1,4 @@
 /**
- * jshint.js
- * ---------
  * `gulp jshint`
  *
  * lint (some of) the JS.
