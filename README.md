@@ -1,65 +1,80 @@
-## Project Name Here
+# PROJECT__NAME__HERE Front End
 
-> Front-end source and usage instructions for the <project name here> Website.
+> Front end source and usage instructions for the PROJECT__NAME__HERE Website.
 
-## Includes
-- [gulp](http://gulpjs.com/)
-- [sass](http://sass-lang.com/)
-- [bourbon](http://bourbon.io/)
-- [normalize](https://github.com/necolas/normalize.css)
-- [gulp-hb](https://github.com/shannonmoeller/gulp-hb)
-- [browserify](http://browserify.org/)
-- [browsersync](http://www.browsersync.io/)
+## Overview
 
-## Getting Started
+This README will give a brief overview of how to get the project front end up and running. For more detailed about the setup and build, see the /docs directory in this project.
 
-### Install Gulp
+### Includes
 
-This project uses [gulp](http://gulpjs.com/) to build the front end so if you don't have that installed already, now's your chance:
+- [gulp](http://gulpjs.com/) to build the project assets.
+- [sass](http://sass-lang.com/) to compile CSS.
+- [browsersync](http://www.browsersync.io/) to run a local development server and handle live reloading on file updates.
+- [browserify](http://browserify.org/) to bundle the project's JS and dependencies.
+- [gulp-hb](https://github.com/shannonmoeller/gulp-hb) to compile Handlebars templates to html.
+- [bourbon](http://bourbon.io/) Just a handy mixin lib for sass.
+- [normalize](https://github.com/necolas/normalize.css) to reset/normalise the base site styles.
 
-`npm install --global gulp`
+### Customisation
 
-### Install Dependencies
+When used in a project, please make sure you update the following files with details of the project:
 
-In order to run the Gulp tasks, you'll need to install the project dependencies. `cd` into this directory and run:
+- `README.md` - Replace any instances of PROJECT__NAME__HERE with project name.
+- `package.json` - Replace any instances of PROJECT__NAME__HERE with project name (please use hyphenated naming convention).
 
-`npm install`
+## Install Prerequisites
 
-## Gulp Tasks
+This project has the following requirements:
 
-The Gulp tasks for this project are broken out into individual task files in ./gulp/tasks. Each file will (or should!) have a brief comment explaining how to run it and what it does. If it doesn't then MY BAD.
+### Node
 
-Each task can be ran individually when needed, however, there are a set of build/dev tasks that will be explained in (a little bit) more detail below:
+You will need to have both [Node.js](https://nodejs.org) and [NPM](https://www.npmjs.com/) installed on your machine.
+To check that you have it installed, type `node --version` into a terminal window. You should see a version number which needs to be at least 0.12.x (at the time of writing).
 
-### Watching
+If you don't have it, or need to upgrade then you can install it via [Homebrew](http://brew.sh/) (if on OSX):
 
-This task is to be used during local development:
+```sh
+$ brew install node
+```
 
-`gulp watch`
+This will (unless told otherwise) install both node and NPM.
 
-- Build the front-end assets (`gulp build`).
-- Start a local dev server (`gulp browsersync`)
-- Start watching for file changes.
+### Gulp
 
-### Building
+You will need to have [Gulp](http://gulpjs.com/) installed globally on your machine.
+If you're not sure if you have it, type `gulp --version` into a terminal window. If you have it, you should see a version number. This version should be at least 3.9.x (at the time of writing).
 
-The build task will clean out and re-build all the assets for the static front-end:
+If you don't have it, or need to upgrade, type the following into a terminal window:
 
-`gulp build`
+```sh
+$ npm install --global gulp
+```
 
-This command also utilises the NODE_ENV environment variable which will allow us to detect the environment that we're building for. Currently, this project only supports `dev` or `production` environments (`dev` is the default).
+## Install Local Dependencies
 
-#### Production Build
+To install the local/project dependencies, open a terminal window and ensure that you're in the root of the FE directory (commonly /front-end in most projects) and type the following:
 
-For a production build (e.g. on dev/QA servers), run this command:
+```sh
+$ npm install
+```
 
-`NODE_ENV=production gulp build`
+This will install all the project dependencies that are defined in the `package.json` file.
 
-The main differences when building for production mode:
+### Running the project
 
-- CSS will be minified and source maps exluded.
-- JS will be minified and source maps exluded.
+Each individual gulp task will be documented in more detail in the `docs/gulp-tasks.md` file.
+However, in the spirit of getting up and running, open a terminal window and type the following:
 
-## TODO's/Improvements
-1. Have added task and dependencies for stylelint (postcss linting). Keeping scss-lint for now too incase it's crap but if it works out then we can remove the Ruby/Bundler dependencies. Exciting.
-2. jQuery - consider removing this, I would like to get to a place where it's not needed (Get better at ES6, Kristy. God.). Plugins may need it though...
+```sh
+$ gulp watch
+```
+This will start local dev server, serve your files and start watching for changes in .html, .scss and .js files.
+
+
+## Find out More
+
+As mentioned above, you can read more about the various aspects of the front end setup in the /docs directory:
+
+- `file-appendix.md`: An overview of what the various files used in the project do.
+- `gulp-tasks.md`: An overview of each individual Gulp task.
