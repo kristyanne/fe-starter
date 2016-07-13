@@ -16,7 +16,6 @@
     "autoprefixer": "^6.3.3",
     "browser-sync": "^2.10.0",
     "browserify": "^13.0.1",
-    "browserify-shim": "^3.8.11",
     "cssnano": "^3.5.2",
     "es6-promise": "^3.0.2",
     "eslint-config-xo": "^0.15.2",
@@ -44,10 +43,5 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.6.1"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
   }
 }

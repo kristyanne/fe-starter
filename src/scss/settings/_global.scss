@@ -1,0 +1,32 @@
+/* ==========================================================================
+   #GLOBAL
+   ========================================================================== */
+
+/**
+ * Project level generic configuration settings.
+ *
+ * This should include configuration for values such as base type styles,
+ * UI config values (e.g. for consistent styling of components).
+ *
+ * These values should be updated on a per project basis.
+ */
+
+// Default type styles. These value will be stored against the <html />
+// element (as rem units) to define base font size and line height.
+$project-font-size: 16px;
+$project-line-height: 22px;
+
+// Default spacing (margin/padding) values. We will base this on the
+// line height specified above in an effort to keep the vertical rhythm
+// consistent.
+//
+// E.g: { margin-bottom: $project-spacing }
+$project-spacing: round($project-line-height);
+
+
+// Default font/text attribute styles.
+// Currently, this includes things such as font family and font colour.
+// We can add more values to this list where appropriate.
+$project-font: sans-serif;
+$project-font-colour: #333;
+$project-link-colour: #333;

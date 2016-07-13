@@ -1,54 +1,38 @@
 @charset 'UTF-8';
 
-/*------------------------------------*\
-    #IMPORTS
-\*------------------------------------*/
-
 /**
- * Import Utility Libraries.
- *
+ * LIBS
  * Bourbon:   http://bourbon.io
  * Normalize: https://github.com/necolas/normalize.css
- * Grid:      n/a
  */
 @import 'bourbon';
 @import 'normalize';
 
 
 
-/*------------------------------------*\
-    #PLUGIN-IMPORTS
-\*------------------------------------*/
-// List JS plugin CSS files here.
-
-
-
-/*------------------------------------*\
-    #UTILITY-IMPORTS
-\*------------------------------------*/
 /**
- * Import config and utility files.
+ * SETTINGS
+ * Global config files.
  */
-@import 'config/config';
+@import 'settings/colours';
+@import 'settings/global';
+@import 'settings/breakpoints';
+@import 'settings/grid';
+
+
+
+/**
+ * GENERIC
+ * Base/reset or globally available generic styles.
+ */
+@import 'generic/reset';
 @import 'generic/mixins';
-
-
-
-/*------------------------------------*\
-    #BASE-IMPORTS
-\*------------------------------------*/
-/**
- * Import base/generic files.
- */
-@import 'base/base';
-@import 'base/form';
-@import 'base/nav';
 @import 'generic/grid';
 
 
 
-/*------------------------------------*\
-    #COMPONENT-IMPORTS
-\*------------------------------------*/
-// List component files here
+/**
+ * COMPONENTS
+ */
+// List component imports here.
 

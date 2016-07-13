@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #GRID
+   ========================================================================== */
+
+/**
+ * Default .grid {} config settings.
+ *
+ * TODO: This project currently uses a custom grid but it's not as flexible
+ * and maintained as I'd like. Either update the custom grid or use a good
+ * lib.
+ */
+
+// Maximum width of the grid container.
+$grid-width: 1366px;
+
+// Number of columns to use in the grid.
+$grid-columns: 12;
+
+// Default gutter (margin) value between each grid column.
+$grid-gutter: 15px;
+
+// Commonly in our projects, the gutter for mobile/small devices is different
+// to that of the medium/large version.
+// If this is not the case for this project, set this value to that of
+// $grid-gutter above.
+$grid-gutter-small: 15px;

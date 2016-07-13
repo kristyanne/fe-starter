@@ -1,9 +1,12 @@
-/*------------------------------------*\
-    #GRID
-\*------------------------------------*/
+/* ==========================================================================
+   #GRID
+   ========================================================================== */
+
 /**
- * Responsive grid which allows you to manipluate the layout
- * based on viewport size.
+ * Responsive grid which allows you to manipluate the layout based on
+ * viewport size.
+ *
+ * TODO: Consider replacing this grid. It's getting old now.
  */
 
 
@@ -16,9 +19,9 @@
     @include clearfix;
 
     box-sizing: border-box;
-    max-width: grid-config(width);
-    padding-left: grid-config(gutter) * 2;
-    padding-right: grid-config(gutter) * 2;
+    max-width: $grid-width;
+    padding-left: $grid-gutter * 2;
+    padding-right: $grid-gutter * 2;
     margin: 0 auto;
 }
 
@@ -26,8 +29,8 @@
     @include clearfix;
 
     box-sizing: border-box;
-    margin-left: (grid-config(gutter) / -1);
-    margin-right: (grid-config(gutter) / -1);
+    margin-left: ($grid-gutter / -1);
+    margin-right: ($grid-gutter / -1);
 }
 
 @mixin grid-col {

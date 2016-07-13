@@ -1,0 +1,80 @@
+/* ==========================================================================
+   #RESET
+   ========================================================================== */
+
+/**
+ * Some futher generic global resets to extend normalize.
+ *
+ * 1. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+html {
+    box-sizing: border-box; // [1]
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; // [1]
+}
+
+
+
+/**
+ * <nav /> element resets.
+ * 1. Remove spacing from any <ul /> elements inside a <nav /> element.
+ */
+nav ul { // [1]
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/**
+ * <img /> element resets.
+ * Credit: https://github.com/inuitcss/inuitcss/blob/develop/elements/_elements.images.scss
+ *
+ * 1. Setting `vertical-align` removes the whitespace that appears under `img`
+ *    elements when they are dropped into a page as-is. Safer alternative to
+ *    using `display: block;`.
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle; // [1]
+}
+
+/**
+ * 1. If a `width` and/or `height` attribute have been explicitly defined, let’s
+ *    not make the image fluid.
+ */
+img[width],
+img[height] { // [1]
+  max-width: none;
+}
+
+
+
+/**
+ * <form /> element resets.
+ * 1. To override _normalize.css setting.
+ * 2. Prevent the zoom on input focus in iOS.
+ */
+form {
+    input[type='search'] {
+        box-sizing: border-box; // [1]
+    }
+
+    select option {
+        font-size: rem(16px); // [2]
+    }
+
+    #{$all-text-inputs} {
+        appearance: none;
+        border: 0;
+        border-radius: 0;
+        box-sizing: border-box;
+        font-size: rem(16px); // [2]
+        width: 100%;
+    }
+}

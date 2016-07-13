@@ -72,7 +72,6 @@ $ gulp watch
 ```
 This will start local dev server, serve your files and start watching for changes in .html, .scss and .js files.
 
-
 ## Find out More
 
 As mentioned above, you can read more about the various aspects of the front end setup in the /docs directory:
@@ -80,12 +79,14 @@ As mentioned above, you can read more about the various aspects of the front end
 - `file-appendix.md`: An overview of what the various files used in the project do.
 - `gulp-tasks.md`: An overview of each individual Gulp task.
 
-## Inspiration
+## Inspiration & Credits
 
 This FE base is developed and maintained by [Kristy Nolan](https://github.com/kristyanne) for [Connect Group](http://www.connect-group.com/) and takes inspiration and best practice ideas from:
 
 - [Gulp Starter](https://github.com/vigetlabs/gulp-starter)
 - [HTML5 Boilerplate](https://html5boilerplate.com/)
 - [Google WSK](https://github.com/google/web-starter-kit/blob/master/docs/install.md)
+- [idiomatic-css](https://github.com/necolas/idiomatic-css)
+- [inuitcss](https://github.com/inuitcss)
 
 And many more that I can't remember but when I do I'll add links!

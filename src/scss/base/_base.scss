@@ -1,35 +1,21 @@
-/*------------------------------------*\
-    #BASE
-\*------------------------------------*/
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
 /**
- * Base site styles. Define html and body styles in this file.
- *
- * Please don't add any CSS for classed elements to this
- * file.
- *
- * 1. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ * Global element styles (html, body etc). Please don't add any CSS for classed
+ * elements to this file.
  */
 
 html {
-    box-sizing: border-box; // [1]
     font-family: Helvetica, arial, sans-serif;
     font-size: #{(base-config(font-size) / 16px) * 1em};
     line-height: base-config(line-height);
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit; // [1]
-}
-
 body {
     background: base-config(background);
     color: base-config(text-colour);
-}
-
-img {
-    max-width: 100%;
 }
 
 a {
