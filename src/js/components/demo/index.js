@@ -1,6 +1,4 @@
 /**
- * demo/index.js
- * -------------
  * Just a demo component, that's all :)
  */
 module.exports = (function() {
@@ -14,7 +12,7 @@ module.exports = (function() {
         var el = document.getElementsByClassName(selectors.el);
 
         if(!el.length) {
-            console.log('nothing to do here, bye.');
+            console.log('ok bye');
             return;
         }
 

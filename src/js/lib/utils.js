@@ -38,9 +38,9 @@ var Utils = {
      */
     transitionEnd: function() {
         var trans = {
-            'WebkitTransition' : 'webkitTransitionEnd',
-            'MozTransition' : 'transitionend',
-            'transition' : 'transitionend'
+            WebkitTransition: 'webkitTransitionEnd',
+            MozTransition: 'transitionend',
+            transition: 'transitionend'
         };
 
         return trans[Modernizr.prefixed('transition')];
@@ -51,7 +51,7 @@ var Utils = {
      * @return {Boolean} [true|false]
      */
     isLocal: function() {
-        return 'html' === window.location.pathname.split('.').pop();
+        return window.location.pathname.split('.').pop() === 'html';
     },
 
     /**

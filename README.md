@@ -21,7 +21,8 @@ This README will give a brief overview of how to get the project front end up an
 When used in a project, please make sure you update the following files with details of the project:
 
 - `README.md` - Replace any instances of PROJECT__NAME__HERE with project name.
-- `package.json` - Replace any instances of PROJECT__NAME__HERE with project name (please use hyphenated naming convention).
+- `package.json` - Replace any instances of PROJECT__NAME__HERE with project name.
+- `package.json` - Replace git repo details with those of the new project.
 
 ## Install Prerequisites
 

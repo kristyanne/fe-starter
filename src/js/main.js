@@ -1,7 +1,6 @@
-// Import Dependencies
-//var $ = require('jquery');
+'use strict';
 
-// Import Components
-var components = require('./components');
-
-components.demo.init();
+(function() {
+    var components = require('./components');
+    components.demo.init();
+})();

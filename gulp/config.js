@@ -27,11 +27,19 @@ var config = {
         dest: paths.dist + '/css'
     },
 
-    cssLint: {
+    csslint: {
         src: [
             paths.src + '/scss/**/*.scss',
             '!' + paths.src + '/scss/lib/**/*',
             '!' + paths.src + '/scss/plugins/**/*'
+        ]
+    },
+
+    eslint: {
+        src: [
+            paths.src + '/js/**/*.js',
+            '!' + paths.src + '/js/vendor/**',
+            '!' + paths.src + '/js/lib/templates.js'
         ]
     },
 
@@ -62,20 +70,7 @@ var config = {
         handlebars: {
             src: paths.src + '/js/tpl/**/*.hbs',
             dest: paths.src + '/js/lib'
-        },
-        vendor: {
-            src: paths.src + '/js/vendor/**/*.js',
-            dest: paths.dist + '/js'
         }
-    },
-
-    jshint: {
-        src: [
-            paths.src + '/js/**/*.js',
-            '!' + paths.src + '/js/vendor/**',
-            '!' + paths.src + '/js/plugins/**',
-            '!' + paths.src + '/js/lib/templates.js'
-        ]
     }
 };
 
