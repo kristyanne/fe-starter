@@ -8,7 +8,7 @@ var gulp = require('gulp');
 var hb = require('gulp-hb');
 var bs = require('browser-sync');
 var handleError  = require('../lib/handleError');
-
+var size = require('gulp-size');
 var config = require('../config').html;
 
 gulp.task('html', function() {
@@ -21,5 +21,6 @@ gulp.task('html', function() {
         }))
         .on('error', handleError)
         .pipe(gulp.dest(config.dest))
+        .pipe(size({ title: 'compiled html size:' }))
         .pipe(bs.reload({ stream: true }));
 });

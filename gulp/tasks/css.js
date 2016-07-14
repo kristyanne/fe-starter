@@ -12,6 +12,7 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var bs = require('browser-sync');
+var size = require('gulp-size');
 
 // Import Utils & Configs
 var config = require('../config').css;
@@ -37,6 +38,7 @@ gulp.task('css', ['csslint'], function() {
             ]
         }).on('error', sass.logError))
         .pipe(postcss(processors))
+        .pipe(size({ title: 'compiled css size:' }))
         .pipe(utils.isDev() ? sourcemaps.write('./') : noop())
         .pipe(gulp.dest(config.dest))
         .pipe(bs.reload({ stream: true }));

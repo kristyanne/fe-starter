@@ -16,6 +16,7 @@ var buffer = require('vinyl-buffer');
 var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var size = require('gulp-size');
 
 // Config and Utils.
 var config = require('../config').js.browserify;
@@ -57,6 +58,7 @@ var bundleTask = function( devMode ) {
             .pipe(utils.isDev() ? sourcemaps.write('./') : noop())
             .pipe(!utils.isDev() ? uglify() : noop())
             .pipe(gulp.dest(config.dest))
+            .pipe(size({ title: 'compiled JS bundle size:', showFiles: true }))
             .pipe(bs.reload({ stream: true }));
     };
 

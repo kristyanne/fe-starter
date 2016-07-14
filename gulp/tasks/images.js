@@ -8,6 +8,7 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var cached = require('gulp-cached');
+var size = require('gulp-size');
 var conf = require('../config').imagemin;
 
 gulp.task('images', function() {
@@ -17,5 +18,6 @@ gulp.task('images', function() {
             optimizationLevel: 7, // [1]
             progressive: true
         }))
-        .pipe(gulp.dest(conf.dest));
+        .pipe(gulp.dest(conf.dest))
+        .pipe(size({ title: 'compiled images size:' }))
 });
