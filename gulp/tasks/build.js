@@ -7,7 +7,7 @@ var gulp  = require('gulp');
 var buildTasks = [
     'css',
     'html',
-    'eslint',
+    //'eslint',
     'browserify',
     'images'
 ];

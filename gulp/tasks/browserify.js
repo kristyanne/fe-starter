@@ -21,6 +21,7 @@ var uglify = require('gulp-uglify');
 var config = require('../config').js.browserify;
 var noop  = require('gulp-util').noop;
 var utils = require('../lib/utils');
+var linter = require('./eslint');
 
 // Lodash Includes.
 var _assign = require('lodash').assign;
@@ -45,6 +46,8 @@ var bundleTask = function( devMode ) {
     var b = browserify( options );
 
     var bundle = function() {
+        linter();
+
         return b
             .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
