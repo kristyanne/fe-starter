@@ -72,6 +72,8 @@ $ gulp watch
 ```
 This will start local dev server, serve your files and start watching for changes in .html, .scss and .js files.
 
+**PLEASE NOTE:** Only ever work with the files in the ./src directory of the project. The ./dist directory is where compiled files will be placed so if you change anything in dist, your changes will be overwritten.
+
 ## Find out More
 
 As mentioned above, you can read more about the various aspects of the front end setup in the /docs directory:
