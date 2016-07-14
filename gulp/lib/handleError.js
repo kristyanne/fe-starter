@@ -1,11 +1,7 @@
 /**
- * handleError.js
- * ==============
- *
  * helper function to handle errors with gulp-notify
  * (https://www.npmjs.com/package/gulp-notify)
  */
-
 var notify = require('gulp-notify');
 var utils = require('./utils');
 

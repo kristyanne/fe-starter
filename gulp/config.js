@@ -1,7 +1,5 @@
 /**
- * config.js
- * ---------
- * configuration settings for the project gulp tasks.
+ * Configuration settings for the project gulp tasks.
  */
 
 // Define base paths
@@ -55,6 +53,12 @@ var config = {
         partials: paths.src + '/html/{layouts,partials}/**/*.{html,hbs}',
         data: paths.src + '/html/data/**/*.{js,json}',
         dest: paths.dist + '/html'
+    },
+
+    icons: {
+        src: paths.src + '/svg/icons/**/*.svg',
+        dest: paths.dist + '/svg',
+        yml: './icons.yml'
     },
 
     imagemin: {

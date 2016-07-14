@@ -8,6 +8,7 @@ var buildTasks = [
     'css',
     'html',
     'browserify',
+    'icons',
     'images'
 ];
 

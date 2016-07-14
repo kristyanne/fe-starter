@@ -1,6 +1,4 @@
 /**
- * utils.js
- * --------
  * A collection of useful utility functions for the gulp tasks.
  *
  * Since we don't have many yet, it makes sense to keep them
