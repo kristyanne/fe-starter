@@ -7,7 +7,6 @@
 // Import Dependencies
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -39,7 +38,6 @@ gulp.task('css', ['csslint'], function() {
         }).on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(utils.isDev() ? sourcemaps.write('./') : noop())
-        .pipe(rename({extname: '.min.css'}))
         .pipe(gulp.dest(config.dest))
         .pipe(bs.reload({ stream: true }));
 });
