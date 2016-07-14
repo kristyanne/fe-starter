@@ -5,7 +5,7 @@ Reading the code for each task will help you to better understand how they work 
 
 ### Watch
 
-Source: ./gulp/tasks/watch.js
+`./gulp/tasks/watch.js`
 
 This is the task that you'll want to run when you're developing the site locally. It will run the main `build` task (see below) and then start a local dev server (serving the `dist` directory) using [browsersync](https://www.browsersync.io/) and is usually served on `http://localhost:3000`.
 
@@ -19,7 +19,7 @@ $ gulp watch
 
 ### Build
 
-Source: ./gulp/tasks/build.js
+`./gulp/tasks/build.js`
 
 This is the task to run when you want to build and optimise the front end assets ready for dev or production.
 This includes (but is not limited to) compiling the CSS, JS and HTML and minifying image and SVG assets. What this task does can vary from project to project so I recommend checkout out the source to learn more.
@@ -56,9 +56,13 @@ Currently, the main differences when building for production will be:
 
 ### Browserify
 
+`./gulp/tasks/browserify.js`
+
 [Browserify](http://browserify.org/) is used in the project to bundle the scripts and their dependencies.
 
 This task will firstly run the target file (usually ./src/js/main.js) file through the Javascript linter (currently eslint) and, if this passes the linter, it will run the file through Browserify. The bundled JS file will then be created and put into the dist directory.
+
+The eslint configuration is defined in `.src/.eslintrc`. This file is an extension of the [sindresorhus eslint](https://github.com/sindresorhus/eslint-config-xo) config with some overriding/custom rules for this project. The linting configuration allows us to maintain consistent code standards and style across the project so please don't change this file without consulting the other devs first.
 
 ```sh
 $ gulp browserify
@@ -66,15 +70,21 @@ $ gulp browserify
 
 ### CSS
 
+`./gulp/tasks/css.js`
+
 Fairly straightforward, run this if you want to compile the SASS to CSS.
 
 Firstly, the CSS will be linted. If it passes linting, the CSS will be compiled. Then, the task will run the newly generated CSS through autoprefixer (automatically adds vendor prefixes to CSS rules) and cssnano (minifies the CSS). Finally, it will then put the final optimised CSS file into the ./dist directory.
+
+The [stylelint](https://github.com/stylelint/stylelint) configuration is defined in `.src/.stylelintrc`. The linting configuration allows us to maintain consistent code standards and style across the project so please don't change this file without consulting the other devs first.
 
 ```sh
 $ gulp css
 ```
 
 ### Icons
+
+`./gulp/tasks/icons.js`
 
 This task will generate an SVG sprite containing the SVG files located in ./src/svg/icons. If at any point you need to add new icons to the sprite, just add them to that directory and on the next `build` or `icons` task, they will be added to the spritesheet.
 
@@ -84,6 +94,8 @@ $ gulp icons
 
 ### Images
 
+`./gulp/tasks/images.js`
+
 Another fairly straightforward task, this will compress and copy any images from ./src/img into ./dist/img.
 
 ```sh
@@ -91,6 +103,8 @@ $ gulp images
 ```
 
 ### Serve
+
+`./gulp/tasks/serve.js`
 
 This starts a new local dev server using [browsersync](https://www.browsersync.io/) and will serve the contents of the ./dist directory. This will not run a build or watch for changes so it's just handy if you need to run the site locally but don't require live reloading.
 
