@@ -1,6 +1,8 @@
 {
 	"paths": {
 		"js": "/js",
-		"css": "/css"
+		"css": "/css",
+        "img": "/img",
+        "svg": "/svg"
 	}
 }

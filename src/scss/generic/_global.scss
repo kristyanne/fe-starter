@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #GLOBAL
+   ========================================================================== */
+
+/**
+ * Global level styles.
+ * These should be styles that affect elements site wide (sort of like a project
+ * specific reset).
+ *
+ * Base font sizes, colours or any other default styles for the project should be
+ * defined in here.
+ *
+ * Global config defined in: settings/_global.scss
+ */
+
+html {
+    font-family: $project-font-family;
+    font-size: ($project-font-size / 16px) * 1em;
+    line-height: $project-line-height / $project-font-size;
+}
+
+body {
+    color: $project-font-colour;
+}

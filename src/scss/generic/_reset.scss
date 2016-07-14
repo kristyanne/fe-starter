@@ -6,9 +6,11 @@
  * Some futher generic global resets to extend normalize.
  *
  * 1. See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ * 2. inuitcss: Ensure the page always fills at least the entire height of the viewport.
  */
 html {
     box-sizing: border-box; // [1]
+    min-height: 100%; // [2]
 }
 
 *,
@@ -50,7 +52,7 @@ img {
  */
 img[width],
 img[height] { // [1]
-  max-width: none;
+    max-width: none;
 }
 
 

@@ -6,15 +6,18 @@
  * Responsive grid which allows you to manipluate the layout based on
  * viewport size.
  *
+ * Settings defined in:
+ * Breakpoints: settings/_breakpoints.css
+ * Grid: settings/_grid.scss
+ *
  * TODO: Consider replacing this grid. It's getting old now.
  */
 
 
 
-/*------------------------------------*\
-    #GRID-MIXINS
-\*------------------------------------*/
-
+/**
+ * Grid Mixins.
+ */
 @mixin grid-container {
     @include clearfix;
 
@@ -37,31 +40,32 @@
     box-sizing: border-box;
     float: left;
     min-height: 1px;
-    padding-left: (grid-config(gutter));
-    padding-right: (grid-config(gutter));
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
     position: relative;
 }
 
 @mixin grid-span($cols) {
-    width: percentage(($cols / grid-config(columns)));
+    width: percentage($cols / $grid-columns);
 }
 
 @mixin grid-offset($cols) {
-    margin-left: percentage(($cols / grid-config(columns)));
+    margin-left: percentage($cols / $grid-columns);
 }
 
 
 
-/*------------------------------------*\
-    #GRID-CORE
-\*------------------------------------*/
+/**
+ * Grid Core.
+ *
+ * `.grid {}` is the grid container element.
+ * <div class="grid"></div>
+ */
 .grid {
     @include grid-container;
 }
 
-/**
- * Default Grid
- */
+// DEFAULT.
 @include screen-bigger-than(breakpoint(medium)) {
     .grid__row {
         @include grid-row;
@@ -75,7 +79,7 @@
         }
     }
 
-    @for $i from 1 through grid-config(columns) {
+    @for $i from 1 through $grid-columns {
         .span-#{$i} {
             @include grid-span($i);
         }
@@ -85,7 +89,7 @@
         }
     }
 
-    @for $i from 1 through grid-config(columns) {
+    @for $i from 1 through $grid-columns {
         $nth: $i + 1;
 
         .per-row-#{$i} {
@@ -96,11 +100,9 @@
     }
 }
 
-/**
- * Medium Viewport Grid
- */
+// MEDIUM VIEWPORT ONLY.
 @include screen-between(breakpoint(medium), breakpoint(large)) {
-    @for $i from 1 through grid-config(columns) {
+    @for $i from 1 through $grid-columns {
         .medium--span-#{$i} {
             @include grid-span($i);
         }
@@ -110,7 +112,7 @@
         }
     }
 
-    @for $i from 1 through grid-config(columns) {
+    @for $i from 1 through $grid-columns {
         $nth: $i + 1;
 
         .medium--per-row-#{$i} {
@@ -121,11 +123,9 @@
     }
 }
 
-/**
- * Large Viewport Grid
- */
+// LARGE VIEWPORT ONLY.
 @include screen-bigger-than(breakpoint(large)) {
-    @for $i from 1 through grid-config(columns) {
+    @for $i from 1 through $grid-columns {
         .large--span-#{$i} {
             @include grid-span($i);
         }
@@ -135,7 +135,7 @@
         }
     }
 
-    @for $i from 1 through grid-config(columns) {
+    @for $i from 1 through $grid-columns {
         $nth: $i + 1;
 
         .large--per-row-#{$i} {
@@ -146,38 +146,36 @@
     }
 }
 
-/**
- * Small only Grid
- */
+// SMALL VIEWPORT ONLY.
 @include screen-smaller-than(breakpoint(small, max)) {
     .grid {
-        padding-left: grid-config(gutter-small);
-        padding-right: grid-config(gutter-small);
+        padding-left: $grid-gutter-small;
+        padding-right: $grid-gutter-small;
     }
 
     .grid--small {
         .grid__row {
             @include grid-row;
 
-            margin-left: (grid-config(gutter-small) / -2);
-            margin-right: (grid-config(gutter-small) / -2);
+            margin-left: ($grid-gutter-small / -2);
+            margin-right: ($grid-gutter-small / -2);
         }
 
         .grid__col {
             @include grid-col;
 
-            padding-left: grid-config(gutter-small);
-            padding-right: grid-config(gutter-small);
+            padding-left: $grid-gutter-small;
+            padding-right: $grid-gutter-small;
         }
     }
 
-    @for $i from 1 through grid-config(columns) {
+    @for $i from 1 through $grid-columns {
         .small--span-#{$i} {
             @include grid-span($i);
         }
     }
 
-    @for $i from 1 through grid-config(columns) {
+    @for $i from 1 through $grid-columns {
         $nth: $i + 1;
 
         .small--per-row-#{$i} {

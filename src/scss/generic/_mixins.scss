@@ -1,23 +1,38 @@
-/*------------------------------------*\
-    #MIXINS
-\*------------------------------------*/
+/* ==========================================================================
+   #MIXINS
+   ========================================================================== */
 /**
  * A collection of generic/handy(!) mixins.
  */
 
 
 
-/*------------------------------------*\
-    #DISPLAY-MIXINS
-\*------------------------------------*/
+/**
+ * Generate a font size in rem units from a given pixel value.
+ *
+ * 1. Old IE fallback. Maybe not necessary but we'll leave this in for now (stylint doesn't
+ *    like it though).
+ * 2. Font size in rem units.
+ *
+ * @param $px [size of font needed in pixels]
+ */
+/* stylelint-disable */
+@mixin font-size($px) {
+    font-size: $px; // [1]
+    font-size: ($px / $project-font-size) * 1rem; // [2]
+}
+/* stylelint-enable */
+
+
+
 /**
  * Display related mixins.
  *
  * 1. Visually hide an element. This is an accessibile way of "hiding" an element from view
- * while keeping it focusable (http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
+ *    while keeping it focusable (http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
  *
  * 2. The boubon.io hide-text mixin only works if the element has a width and height so
- * this one is just better aint it.
+ *    this one is just better aint it.
  *
  * 3. http://bourbon.io/docs/#clearfix
  *
@@ -54,9 +69,6 @@
 
 
 
-/*------------------------------------*\
-    #MEDIA-QUERY-MIXINS
-\*------------------------------------*/
 /**
  * Handy media query mixin util.
  */
