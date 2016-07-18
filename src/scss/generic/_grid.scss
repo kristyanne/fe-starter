@@ -22,10 +22,10 @@
     @include clearfix;
 
     box-sizing: border-box;
+    margin: 0 auto;
     max-width: $grid-width;
     padding-left: $grid-gutter * 2;
     padding-right: $grid-gutter * 2;
-    margin: 0 auto;
 }
 
 @mixin grid-row {
