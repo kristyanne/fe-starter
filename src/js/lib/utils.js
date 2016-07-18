@@ -1,65 +1,50 @@
-/* exported Modernizr */
-/* global Modernizr */
-
-/**
- * These should match those defined in
- * `scss/lib/grid/_config`
- */
-var CSSBreakpoints = {
-    small: {
-        min: 320,
-        max: 740
-    },
-    medium: {
-        min: 741,
-        max: 900
-    },
-    large: {
-        min: 901
-    }
-};
-
-var Utils = {
+module.exports = (function() {
     /**
-     * Define some media queries to use with enquire.js
-     * in an attempt to detect the user's device :/
+     * These should match those defined in `scss/settings/_grid`.
      *
-     * 1. <= Small size viewports only.
-     * 2. = Medium size viewports only.
+     * Might be nice if both the CSS and JS could share this.
+     * Hmm..
      */
-    MQ: {
-        small: 'screen and (max-width: ' + CSSBreakpoints.small.max + 'px)', // [1]
-        medium: 'screen and (min-width: ' + CSSBreakpoints.medium.min + 'px) and (max-width: ' + CSSBreakpoints.medium.max + 'px)' // [2]
-    },
+    var CSSBreakpoints = {
+        small: {
+            min: 320,
+            max: 740
+        },
+        medium: {
+            min: 741,
+            max: 900
+        },
+        large: {
+            min: 901
+        }
+    };
 
-    /**
-     * Return current supported vendor prefixed transitionend string.
-     * @return {string}
-     */
-    transitionEnd: function() {
-        var trans = {
-            WebkitTransition: 'webkitTransitionEnd',
-            MozTransition: 'transitionend',
-            transition: 'transitionend'
-        };
+    return {
+        /**
+         * Define some media queries to use with enquire.js in an attempt
+         * to detect the user's device :/
+         *
+         * 1. <= Small size viewports only.
+         * 2. = Medium size viewports only.
+         */
+        MQ: {
+            small: 'screen and (max-width: ' + CSSBreakpoints.small.max + 'px)', // [1]
+            medium: 'screen and (min-width: ' + CSSBreakpoints.medium.min + 'px) and (max-width: ' + CSSBreakpoints.medium.max + 'px)' // [2]
+        },
 
-        return trans[Modernizr.prefixed('transition')];
-    },
+        /**
+         * Crude attempt at detecting local dev env.
+         * @return {Boolean} [true|false]
+         */
+        isLocal: function() {
+            return window.location.pathname.split('.').pop() === 'html';
+        },
 
-    /**
-     * Crude attempt at detecting local dev env.
-     * @return {Boolean} [true|false]
-     */
-    isLocal: function() {
-        return window.location.pathname.split('.').pop() === 'html';
-    },
-
-    /**
-     * Shamelessly borrowed from: https://github.com/ded/bowser/blob/master/bowser.js
-     */
-    isIE: function isIE() {
-        return /msie|trident/i.test(navigator.userAgent);
-    }
-};
-
-module.exports = Utils;
+        /**
+         * Shamelessly borrowed from: https://github.com/ded/bowser/blob/master/bowser.js
+         */
+        isIE: function isIE() {
+            return /msie|trident/i.test(navigator.userAgent);
+        }
+    };
+})();
