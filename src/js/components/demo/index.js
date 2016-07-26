@@ -1,14 +1,14 @@
 /**
  * Just a demo component, that's all :)
  */
-module.exports = (function() {
-    var selectors = {
+module.exports = (() => {
+    let selectors = {
         el: 'js-demo'
     };
 
-    var component;
+    let component;
 
-    var init = function() {
+    let init = () => {
         var el = document.getElementsByClassName(selectors.el);
 
         if(!el.length) {
@@ -22,7 +22,5 @@ module.exports = (function() {
         component.innerHTML = 'Hello, this is a JS demo :)';
     };
 
-    return {
-        init: init
-    };
+    return {init};
 })();

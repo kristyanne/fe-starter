@@ -44,7 +44,7 @@ var bundleTask = function( devMode ) {
         options = _assign({}, customOpts);
     }
 
-    var b = browserify( options );
+    var b = browserify( options ).transform('babelify');
 
     var bundle = function() {
         linter();

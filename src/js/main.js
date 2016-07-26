@@ -1,6 +1,6 @@
 'use strict';
 
-(function() {
-    var components = require('./components');
+(() => {
+    let components = require('./components');
     components.demo.init();
 })();
