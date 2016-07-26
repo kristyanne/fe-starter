@@ -1,4 +1,4 @@
-## Files
+# Files
 
 This will cover the basics of what the various files in the root of the project do.
 
