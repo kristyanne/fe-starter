@@ -56,7 +56,7 @@ var config = {
     html: {
         path: paths.src + '/html',
         pages: paths.src + '/html/pages/**/*.html',
-        helpers: 'gulp/helpers/*.js',
+        helpers: './gulp/lib/helpers/*.js',
         partials: paths.src + '/html/{layouts,partials}/**/*.{html,hbs}',
         data: paths.src + '/html/data/**/*.{js,json}',
         dest: paths.dist + '/html'

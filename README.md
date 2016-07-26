@@ -1,6 +1,6 @@
-# PROJECT__NAME__HERE Front End
+# Project Front End
 
-> Front end source and usage instructions for the PROJECT__NAME__HERE Website.
+> Front end source and usage instructions.
 
 ## Overview
 
@@ -16,13 +16,61 @@ This README will give a brief overview of how to get the project front end up an
 - [bourbon](http://bourbon.io/) Just a handy mixin lib for sass.
 - [normalize](https://github.com/necolas/normalize.css) to reset/normalise the base site styles.
 
-### Customisation
+### Starting a new Project
 
-When used in a project, please make sure you update the following files with details of the project:
+Please follow these instructions for using this FE in a new project. This assumes you will clone this FE from Git/Bitbucket into an existing project and that the directory structure will be `project-name-here/front-end`.
 
-- `README.md` - Replace any instances of PROJECT__NAME__HERE with project name.
-- `package.json` - Replace any instances of PROJECT__NAME__HERE with project name.
-- `package.json` - Replace git repo details with those of the new project.
+1) In a terminal window, cd into the project directory:
+
+```sh
+$ cd ~/project-name-here
+```
+
+2) Either Clone this repo into the project, or, download a .zip file from git/bitbucket containing the source.
+
+```sh
+$ git clone <bitbucket-url-here> front-end
+```
+
+3) By now, you should have this FE source inside your project in a directory called front-end.
+
+4) If you've cloned this from git/bitbucket, clear out any `git` data to start a fresh history. In a terminal window, cd into the FE directory and type the following:
+
+```sh
+$ cd ~/project-name-here/front-end
+$ rm -rf .git
+```
+
+## Customisation
+
+Once this FE code is part of your new project, you will need to follow some customisation steps to tailor it to your project:
+
+1) `package.json`: Update `name` to the name of your project. E.g:
+
+```json
+{
+    "name": "project-name-front-end"
+}
+```
+
+2) `package.json`: Update `description` with a description of your project. E.g:
+
+```json
+{
+    "description": "Front end source for the <project-name-here> project."
+}
+```
+
+3) `package.json`: Update the `repository` details to match those of your new project. E.g:
+
+```json
+{
+    "repository": {
+        "type": "git",
+        "url": "git@bitbucket.org:connectgroup/project-name-here.git"
+    }
+}
+```
 
 ## Install Prerequisites
 
