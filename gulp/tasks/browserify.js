@@ -19,7 +19,7 @@ var uglify = require('gulp-uglify');
 var size = require('gulp-size');
 
 // Config and Utils.
-var config = require('../config').js.browserify;
+var config = require('../config').browserify;
 var noop  = require('gulp-util').noop;
 var utils = require('../lib/utils');
 var linter = require('./eslint');
@@ -31,7 +31,7 @@ var _assign = require('lodash').assign;
 //
 // 1. sourcemaps, I think?
 var customOpts = {
-    entries: [config.src],
+    entries: [config.src + '/' + config.entry],
     debug: utils.isDev() // [1]
 };
 
@@ -52,7 +52,7 @@ var bundleTask = function( devMode ) {
         return b
             .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-            .pipe(source('main.js'))
+            .pipe(source(config.output))
             .pipe(buffer())
             .pipe(utils.isDev() ? sourcemaps.init({ loadMaps: true }) : noop())
             .pipe(utils.isDev() ? sourcemaps.write('./') : noop())

@@ -12,6 +12,13 @@ var paths = {
 var config = {
     paths: paths,
 
+    browserify: {
+        src: paths.src + '/js',
+        dest: paths.dist + '/js',
+        entry: 'main.js',
+        output: 'main.bundle.js'
+    },
+
     browserSync: {
         baseDir: [ paths.dist + '/html', paths.dist ]
     },
@@ -67,10 +74,6 @@ var config = {
     },
 
     js: {
-        browserify: {
-            src: paths.src + '/js/main.js',
-            dest: paths.dist + '/js',
-        },
         handlebars: {
             src: paths.src + '/js/tpl/**/*.hbs',
             dest: paths.src + '/js/lib'
