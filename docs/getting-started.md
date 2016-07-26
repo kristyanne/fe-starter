@@ -106,7 +106,7 @@ This will install all the project dependencies that are defined in the `package.
 
 ### Running the project
 
-Each individual gulp task will be documented in more detail in the `tasks.md` file.
+Each individual gulp task will be documented in more detail in the [Tasks](tasks.md) doc.
 However, in the spirit of getting up and running, open a terminal window and type the following:
 
 ```sh
@@ -115,4 +115,4 @@ $ gulp watch
 This will start local dev server, serve your files and start watching for changes in .html, .scss and .js files.
 
 ### Production Builds
-If you don't want to watch for changes and you just want to compile the front end, replace the `gulp watch` command with `gulp build`. Please see the Build for Production section of the [Getting Started](getting-started.md) guide for more information on this.
+If you don't want to watch for changes and you just want to compile the front end, replace the `gulp watch` command with `gulp build`. Please see the [Build for Production](tasks.md#build-for-production) section of the tasks docs for more information on this.
