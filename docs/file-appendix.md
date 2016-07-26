@@ -1,5 +1,3 @@
-# TODO: Document the root/dot files of the project (e.g. .editorconfig, package.json etc)
-
 ## Files
 
 This will cover the basics of what the various files in the root of the project do.
