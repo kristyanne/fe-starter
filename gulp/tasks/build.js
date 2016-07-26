@@ -2,7 +2,9 @@
  * `gulp build`
  */
 
-var gulp  = require('gulp');
+var gulp = require('gulp');
+var utils = require('../lib/utils');
+var config = require('../config').production;
 
 var buildTasks = [
     'css',
@@ -12,4 +14,10 @@ var buildTasks = [
     'images'
 ];
 
-gulp.task('build', buildTasks);
+var productionCopy = !utils.isDev() && config;
+
+gulp.task('build', buildTasks, function() {
+    if(productionCopy) {
+        gulp.src(config.src).pipe(gulp.dest(config.dest));
+    }
+});

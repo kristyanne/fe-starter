@@ -78,6 +78,16 @@ var config = {
             src: paths.src + '/js/tpl/**/*.hbs',
             dest: paths.src + '/js/lib'
         }
+    },
+
+    production: {
+        src: [
+            paths.dist + '/**/*',
+            '!' + paths.dist + '/{html/docs,html/docs/**}',
+            '!' + paths.dist + '/js/**/*.js.map',
+            '!' + paths.dist + '/css/**/*.js.map'
+        ],
+        dest: './production'
     }
 };
 

@@ -47,12 +47,27 @@ $ SET NODE_ENV=production
 $ gulp build
 ```
 
-The node env flag can be used on any of the tasks in this document, this is not specific to the `build` task.
+The NODE_ENV flag can be used on any of the tasks in this document, this is not specific to the `build` task.
 
 Currently, the main differences when building for production will be:
 
 - JS will be minified (uglified) and sourcemaps will be excluded.
 - CSS Sourcemaps will not be included.
+
+**Production Asset Copying**
+
+Once the production build is complete, the build task will copy the final compiled assets into a directory specified in the gulp config file (`./gulp/config.js`) in the `production` object.
+
+Please remember to update the production path on a per project basis as it's name will change.
+
+If you **do not** wish to do this, change the production config to the following:
+
+```js
+production: false
+```
+
+This will tell gulp not to copy any assets over once a production build has been completed.
+
 
 ### Browserify
 

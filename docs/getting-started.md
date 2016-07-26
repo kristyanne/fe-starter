@@ -64,6 +64,8 @@ Once this FE code is part of your new project, you will need to follow some cust
 }
 ```
 
+4) `gulp/config.js`: Update the production directory in the `production` configuration in this file (if required - see [Building for Production](docs/tasks.md#build-for-production) for more information on this).
+
 ## Install Prerequisites
 
 This project has the following requirements:
