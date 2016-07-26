@@ -124,12 +124,12 @@ This will start local dev server, serve your files and start watching for change
 
 **PLEASE NOTE:** Only ever work with the files in the ./src directory of the project. The ./dist directory is where compiled files will be placed so if you change anything in dist, your changes will be overwritten.
 
-## Find out More
+## Docs
 
 As mentioned above, you can read more about the various aspects of the front end setup in the /docs directory:
 
-- [file-appendix.md](docs/file-appendix.md): An overview of what the various files used in the project do.
-- `gulp-tasks.md`: An overview of each individual Gulp task.
+- [File Appendix](docs/file-appendix.md): An overview of what the various files used in the project do.
+- [Gulp Tasks](docs/gulp-tasks.md): An overview of each individual Gulp task.
 
 ## Inspiration & Credits
 
