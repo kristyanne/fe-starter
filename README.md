@@ -18,6 +18,8 @@ This README will give a brief overview of how to get the project front end up an
 
 ## Starting a new Project
 
+If you are not setting up a new project but you are running this existing FE for the first time, you can skip this step and continue on to the [Install Prerequisites](#install-prerequisites) section.
+
 Please follow these instructions for using this FE in a new project. This assumes you will clone this FE from Git/Bitbucket into an existing project and that the directory structure will be `project-name-here/front-end`.
 
 1) In a terminal window, cd into the project directory:
