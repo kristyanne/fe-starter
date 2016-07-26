@@ -62,7 +62,7 @@ Currently, the main differences when building for production will be:
 
 This task will firstly run the target file (usually ./src/js/main.js) file through the Javascript linter (currently eslint) and, if this passes the linter, it will run the file through Browserify. The bundled JS file will then be created and put into the dist directory.
 
-The eslint configuration is defined in `.src/.eslintrc`. This file is an extension of the [sindresorhus eslint](https://github.com/sindresorhus/eslint-config-xo) config with some overriding/custom rules for this project. The linting configuration allows us to maintain consistent code standards and style across the project so please don't change this file without consulting the other devs first.
+The eslint configuration is defined in `/.eslintrc`. This file is an extension of the [sindresorhus eslint](https://github.com/sindresorhus/eslint-config-xo) config with some overriding/custom rules for this project. The linting configuration allows us to maintain consistent code standards and style across the project so please don't change this file without consulting the other devs first.
 
 ```sh
 $ gulp browserify
