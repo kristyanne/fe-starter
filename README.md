@@ -16,7 +16,7 @@ This README will give a brief overview of how to get the project front end up an
 - [bourbon](http://bourbon.io/) Just a handy mixin lib for sass.
 - [normalize](https://github.com/necolas/normalize.css) to reset/normalise the base site styles.
 
-### Starting a new Project
+## Starting a new Project
 
 Please follow these instructions for using this FE in a new project. This assumes you will clone this FE from Git/Bitbucket into an existing project and that the directory structure will be `project-name-here/front-end`.
 
@@ -41,7 +41,7 @@ $ cd ~/project-name-here/front-end
 $ rm -rf .git
 ```
 
-## Customisation
+### Customisation
 
 Once this FE code is part of your new project, you will need to follow some customisation steps to tailor it to your project:
 
