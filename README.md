@@ -4,6 +4,10 @@
 
 ## Overview
 
+This README will contain information on how to set up and use the front-end of this project. Below is an overview of the various tools/features used in this project. While it is not essential that you are familiar with all of them in order to build and run the front-end, developers working on this project would find a working knowledge of gulp, sass, javascript and browserify to be helpful.
+
+Detailed information about the front end source and how get started with it can be found in the [Getting Started](#getting-started) section below.
+
 ### Features
 
 - [gulp](http://gulpjs.com/) to build the project assets.
@@ -29,7 +33,6 @@ Doc | Description
 
 This assumes you have all the code and necessary prerequisites installed on your machine as detailed in the [Getting Started](docs/getting-started.md) document. If you're not sure, head over to there to read more information about this.
 
-### Local Development
 To compile the front end, start a local server and start watching for changes, open up a terminal window and type the following:
 
 ```sh
@@ -38,18 +41,9 @@ $ npm install
 $ gulp watch
 ```
 
-### Production Builds
-If you don't want to watch for changes and you just want to compile the front end, replace the `gulp watch` command with `gulp build`. If you're building for production (on the dev/qa/live servers), you will need to set the NODE_ENV production flag variable as follows:
-
-```sh
-$ cd project-name/front-end
-$ npm install
-$ NODE_ENV=production gulp build
-```
-
 ## Inspiration & Credits
 
-This FE base is developed and maintained by [Kristy Nolan](https://github.com/kristyanne) for [Connect Group](http://www.connect-group.com/) and takes inspiration and best practice ideas from:
+This project is based upon the fe-base project which is is developed and maintained by [Kristy Nolan](https://github.com/kristyanne) for [Connect Group](http://www.connect-group.com/) and takes inspiration and best practice ideas from:
 
 - [Gulp Starter](https://github.com/vigetlabs/gulp-starter)
 - [HTML5 Boilerplate](https://html5boilerplate.com/)

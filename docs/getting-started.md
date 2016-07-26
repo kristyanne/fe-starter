@@ -111,3 +111,6 @@ However, in the spirit of getting up and running, open a terminal window and typ
 $ gulp watch
 ```
 This will start local dev server, serve your files and start watching for changes in .html, .scss and .js files.
+
+### Production Builds
+If you don't want to watch for changes and you just want to compile the front end, replace the `gulp watch` command with `gulp build`. Please see the Build for Production section of the [Getting Started](docs/getting-started.md) guide for more information on this.
