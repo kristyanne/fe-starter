@@ -1,4 +1,4 @@
-## Tasks
+# Tasks
 
 This section will briefly detail each of the gulp/npm tasks in this project which are used to build the various assets for the front end.
 Reading the code for each task will help you to better understand how they work so I won't go into too much depth here but this will hopefully give you an intro into what each task does and how to use them.
