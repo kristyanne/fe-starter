@@ -128,7 +128,7 @@ This will start local dev server, serve your files and start watching for change
 
 As mentioned above, you can read more about the various aspects of the front end setup in the /docs directory:
 
-- `file-appendix.md`: An overview of what the various files used in the project do.
+- [file-appendix.md](docs/file-appendix.md): An overview of what the various files used in the project do.
 - `gulp-tasks.md`: An overview of each individual Gulp task.
 
 ## Inspiration & Credits
