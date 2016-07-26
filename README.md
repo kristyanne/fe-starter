@@ -4,9 +4,9 @@
 
 ## Overview
 
-This README will contain information on how to set up and use the front-end of this project. Below is an overview of the various tools/features used in this project. While it is not essential that you are familiar with all of them in order to build and run the front-end, developers working on this project would find a working knowledge of gulp, sass, javascript and browserify to be helpful.
-
 Detailed information about the front end source and how get started with it can be found in the [Getting Started](#getting-started) section below.
+
+Below is an overview of the various tools/features that are used in this project. While it is not essential that you are familiar with all of them in order to build and run the front-end, developers working on this project would find a working knowledge of gulp, sass, javascript and browserify to be helpful.
 
 ### Features
 
