@@ -130,7 +130,7 @@ As mentioned above, you can read more about the various aspects of the front end
 
 Doc | Description
 ----| -----------
-
+[Getting Started](docs/getting-started.md) | This is a description of getting started.
 
 - [Getting Started](docs/getting-started.md)
 - [File Appendix](docs/file-appendix.md): An overview of what the various files used in the project do.
