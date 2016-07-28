@@ -1,9 +1,17 @@
 /**
- * bh-repeat.js Handlebars Helper
- * ------------------------------
- * Repeat array x number of times.
+ * Handlebars Helper
+ * -----------------
+ * Repeat array/block x number of times.
  *
- * HB Usage: {{#each (repeat array_here 2)}}{{/each}}
+ * Usage:
+ * var arr = ['dog', 'cat'];
+ * {{#each (repeat arr 2)}}<div>{{ this }}</div>{{/each}}
+ *
+ * Output:
+ * <div>dog</div>
+ * <div>cat</div>
+ * <div>dog</div>
+ * <div>cat</div>
  */
 module.exports.register = function(Handlebars) {
     'use strict';

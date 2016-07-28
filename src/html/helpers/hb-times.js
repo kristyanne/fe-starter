@@ -1,7 +1,16 @@
 /**
- * hb-times.js Handlebars Helper
- * -----------------------------
- * (very) basic for loop.
+ * Handlebars Helper
+ * -----------------
+ * Basic for loop to repeat a block of content x times.
+ *
+ * Usage:
+ * {{#times 4}}<div>Hello</div>{{/times}}
+ *
+ * Output:
+ * <div>Hello</div>
+ * <div>Hello</div>
+ * <div>Hello</div>
+ * <div>Hello</div>
  */
 module.exports.register = function(Handlebars) {
     'use strict';
