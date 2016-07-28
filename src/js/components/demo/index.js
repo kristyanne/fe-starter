@@ -1,6 +1,8 @@
 /**
  * Just a demo component, that's all :)
  */
+var utils = require('utils');
+
 module.exports = (() => {
     let selectors = {
         el: 'js-demo'
@@ -15,6 +17,8 @@ module.exports = (() => {
             console.log('ok bye');
             return;
         }
+
+        console.log(utils.isLocal());
 
         component = el[0];
 

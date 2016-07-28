@@ -17,6 +17,7 @@ var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var size = require('gulp-size');
+//var aliasify = require('aliasify');
 
 // Config and Utils.
 var config = require('../config').browserify;
@@ -44,7 +45,13 @@ var bundleTask = function( devMode ) {
         options = _assign({}, customOpts);
     }
 
-    var b = browserify( options ).transform('babelify');
+    var b = browserify( options )
+                .transform('babelify')
+                .transform('aliasify', {
+                    aliases: {
+                        'utils': './src/js/lib/utils.js'
+                    }
+                });
 
     var bundle = function() {
         linter();
