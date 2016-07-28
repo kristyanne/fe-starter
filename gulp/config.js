@@ -73,13 +73,6 @@ var config = {
         dest: paths.dist + '/img'
     },
 
-    js: {
-        handlebars: {
-            src: paths.src + '/js/tpl/**/*.hbs',
-            dest: paths.src + '/js/lib'
-        }
-    },
-
     production: {
         src: [
             paths.dist + '/**/*',
