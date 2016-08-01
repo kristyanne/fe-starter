@@ -14,7 +14,7 @@ var config = require('../config').html;
 gulp.task('html', function() {
     var hbStream = hb({
         bustCache: true,
-        debug: true,
+        debug: false,
         cwd: process.cwd()
     })
 

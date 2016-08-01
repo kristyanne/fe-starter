@@ -35,7 +35,7 @@ If you do add any functionality to the project that will generate assets automat
 
 This is a configuration file for [stylelint](https://github.com/stylelint/stylelint) which is being used in this project to lint the CSS.
 
-### gulpfile.js
+### gulpfile.js/index.js
 
 This project uses Gulp as the task runner and this file is required by gulp to define the various Gulp tasks for the project.
 
