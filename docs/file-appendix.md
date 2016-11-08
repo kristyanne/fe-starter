@@ -49,3 +49,8 @@ This file contains title and description data for each SVG image that is being u
 
 This file is **not automatically maintained**. Each time you add a new SVG icon, you will need to update this file with a title and description for each new icon you add.
 
+### .nvmrc
+
+This file is a configuration file for [nvm](https://github.com/creationix/nvm) which contains the node version that is currently installed on the build server. This allows us to ensure that our local development environment is matching that of the server. In order to use this functionality, you need to have [nvm installed on your machine](https://github.com/creationix/nvm#installation). This will allow you to install and use multiple versions of node which is useful for being able to switch between node versions from project to project.
+
+The most useful use of this file is the ability to automatically switch to the specifed version when changing directories. For this you will need to integrate nvm into your shell. Details on how to do this can be found in the [nvm docs](https://github.com/creationix/nvm#nvmrc).

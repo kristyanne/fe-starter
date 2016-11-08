@@ -70,7 +70,7 @@
 
 
 /**
- * Handy media query mixin util.
+ * Handy media query mixin utility.
  */
 @mixin screen-bigger-than($width) {
     @media screen and (min-width: $width) {
@@ -87,7 +87,6 @@
 /* there seems to be a linting bug with calculations in MQ (https://github.com/stylelint/stylelint/issues/742) */
 /* stylelint-disable */
 @mixin screen-between($min, $max) {
-
     @media screen and (min-width: $min) and (max-width: $max - 1) {
         @content;
     }
