@@ -99,6 +99,22 @@ module.exports = (function() {
     imagemin: {
         src: paths.src + '/img/**/*.{png,jpg,jpeg,gif,ico}',
         dest: paths.dist + '/img'
+    },
+
+    /**
+     * Production Config.
+     *
+     * If the assets are required to be copied to another directory
+     * once the build is complete (Usually restricted to CMS projects).
+     */
+    production: {
+        src: [
+            paths.dist + '/**/*',
+            '!' + paths.dist + '/{html/docs,html/docs/**}',
+            '!' + paths.dist + '/js/**/*.js.map',
+            '!' + paths.dist + '/css/**/*.css.map'
+        ],
+        dest: './production'
     }
  }
 })();
