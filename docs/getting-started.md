@@ -115,4 +115,4 @@ $ gulp watch
 This will start local dev server, serve your files and start watching for changes in .html, .scss and .js files.
 
 ### Production Builds
-If you don't want to watch for changes and you just want to compile the front end, replace the `gulp watch` command with `gulp build`. Please see the [Build for Production](tasks.md#build-for-production) section of the tasks docs for more information on this.
+If you don't want to watch for changes and you just want to compile the front end, replace the `gulp watch` command with `gulp build`. Please see the [Environments](tasks.md#environments) section of the tasks docs for more information on this.
