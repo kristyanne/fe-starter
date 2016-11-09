@@ -8,10 +8,10 @@ var gulp = require('gulp');
 var sprite = require('gulp-svg-sprite');
 
 var error = require('../lib/handleError');
-var config = require('../config').icons;
+var taskConfig = require('../config/tasks').icons;
 
 gulp.task('icons', function() {
-    gulp.src(config.src)
+    gulp.src(taskConfig.src)
         .pipe(sprite({
             mode: {
                 symbol: {
@@ -30,7 +30,7 @@ gulp.task('icons', function() {
                 id: {
                     generator: 'icon-%s'
                 },
-                meta: config.yml
+                meta: taskConfig.yml
             },
             svg: {
                 xmlDeclaration: false,
@@ -38,5 +38,5 @@ gulp.task('icons', function() {
             }
         }))
         .on('error', error)
-        .pipe(gulp.dest(config.dest))
+        .pipe(gulp.dest(taskConfig.dest))
 });

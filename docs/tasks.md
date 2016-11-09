@@ -32,24 +32,19 @@ $ gulp build
 
 ### Build for Production
 
-A few of the gulp tasks in this project do slightly different things depending on the environment you are building it for. The build currently accepts two environment settings: dev and production. The env can be set using the NODE_ENV variable. The default environment will be dev so if you're developing the FE locally, you won't need to do anything differently.
+A few of the gulp tasks in this project do slightly different things depending on the environment you are building it for. Currently, the configured environments are `dev`, `qa`, `preview` and `live`. Allowing the gulp tasks to know what environment they are building for can allow us to configure our builds on a per-environment basis. 
 
-When building for production (e.g. on DEV or QA), you will want to build in production mode, so, you'll need to specify the env variable when running the gulp task:
+The default environment will be `dev` so if you're developing the FE locally, you won't need to do anything differently.
 
-```sh
-$ NODE_ENV=production gulp build
-```
-
-**For windows users**, this has to be broken down into two seperate commands:
+When building for an environment, you'll need to specify the env variable when running the gulp task:
 
 ```sh
-$ SET NODE_ENV=production
-$ gulp build
+$ gulp build --env=live
 ```
 
-The NODE_ENV flag can be used on any of the tasks in this document, this is not specific to the `build` task.
+The env flag can be used on any of the tasks in this document, this is not specific to the `build` task.
 
-Currently, the main differences when building for production will be:
+Currently, the main differences when building for live will be:
 
 - JS will be minified (uglified) and sourcemaps will be excluded.
 - CSS Sourcemaps will not be included.

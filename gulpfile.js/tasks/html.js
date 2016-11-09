@@ -9,7 +9,7 @@ var hb = require('gulp-hb');
 var bs = require('browser-sync');
 var handleError  = require('../lib/handleError');
 var size = require('gulp-size');
-var config = require('../config').html;
+var taskConfig = require('../config/tasks').html;
 
 gulp.task('html', function() {
     var hbStream = hb({
@@ -19,19 +19,19 @@ gulp.task('html', function() {
     })
 
     // Partials/Layouts
-    .partials(config.partials)
+    .partials(taskConfig.partials)
 
     // Helpers
     .helpers(require('handlebars-layouts'))
-    .helpers(config.helpers)
+    .helpers(taskConfig.helpers)
 
     // Template Data
-    .data(config.data);
+    .data(taskConfig.data);
 
-    return gulp.src(config.pages)
+    return gulp.src(taskConfig.pages)
         .pipe(hbStream)
         .on('error', handleError)
-        .pipe(gulp.dest(config.dest))
+        .pipe(gulp.dest(taskConfig.dest))
         .pipe(size({ title: 'compiled html size:' }))
         .pipe(bs.reload({ stream: true }));
 });

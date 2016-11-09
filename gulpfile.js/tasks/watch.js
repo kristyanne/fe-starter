@@ -4,12 +4,12 @@
  */
 
 var gulp = require('gulp');
-var config = require('../config');
+var taskConfig = require('../config/tasks');
 
 gulp.task('watch', ['build', 'watchify', 'serve'], function() {
     // .scss
-    gulp.watch(config.css.watchSrc, ['css']);
+    gulp.watch(taskConfig.css.watchSrc, ['css']);
 
     // .html
-    gulp.watch(config.html.path + '/**/*.{html,hbs}', ['html']);
+    gulp.watch(taskConfig.html.path + '/**/*.{html,hbs}', ['html']);
 });

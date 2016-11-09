@@ -20,7 +20,7 @@ var size = require('gulp-size');
 //var aliasify = require('aliasify');
 
 // Config and Utils.
-var config = require('../config').browserify;
+var taskConfig = require('../config/tasks').browserify;
 var noop  = require('gulp-util').noop;
 var utils = require('../lib/utils');
 var linter = require('./eslint');
@@ -32,7 +32,7 @@ var _assign = require('lodash').assign;
 //
 // 1. sourcemaps, I think?
 var customOpts = {
-    entries: [config.src + '/' + config.entry],
+    entries: [taskConfig.src + '/' + taskConfig.entry],
     debug: utils.isDev() // [1]
 };
 
@@ -59,12 +59,12 @@ var bundleTask = function( devMode ) {
         return b
             .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-            .pipe(source(config.output))
+            .pipe(source(taskConfig.output))
             .pipe(buffer())
             .pipe(utils.isDev() ? sourcemaps.init({ loadMaps: true }) : noop())
             .pipe(utils.isDev() ? sourcemaps.write('./') : noop())
             .pipe(!utils.isDev() ? uglify() : noop())
-            .pipe(gulp.dest(config.dest))
+            .pipe(gulp.dest(taskConfig.dest))
             .pipe(size({ title: 'compiled JS bundle size:', showFiles: true }))
             .pipe(bs.reload({ stream: true }));
     };

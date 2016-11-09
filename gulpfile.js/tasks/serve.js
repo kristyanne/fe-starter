@@ -6,12 +6,12 @@
 
 var gulp = require('gulp');
 var bs = require('browser-sync');
-var config = require('../config').browserSync;
+var taskConfig = require('../config/tasks').browserSync;
 
 gulp.task('serve', function() {
     return bs({
         server: {
-            baseDir: config.baseDir,
+            baseDir: taskConfig.baseDir,
             directory: true
         },
         ghostMode: false,

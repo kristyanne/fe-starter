@@ -15,7 +15,8 @@ var bs = require('browser-sync');
 var size = require('gulp-size');
 
 // Import Utils & Configs
-var config = require('../config').css;
+var config = require('../config');
+var taskConfig = require('../config/tasks').css;
 var noop  = require('gulp-util').noop;
 var utils = require('../lib/utils');
 
@@ -29,7 +30,7 @@ gulp.task('css', ['csslint'], function() {
         processors.push(cssnano());
     }
 
-    return gulp.src(config.src)
+    return gulp.src(taskConfig.src)
         .pipe(utils.isDev() ? sourcemaps.init() : noop())
         .pipe(sass({
             includePaths: [
@@ -40,7 +41,7 @@ gulp.task('css', ['csslint'], function() {
         .pipe(postcss(processors))
         .pipe(size({ title: 'compiled css size:' }))
         .pipe(utils.isDev() ? sourcemaps.write('./') : noop())
-        .pipe(gulp.dest(config.dest))
+        .pipe(gulp.dest(taskConfig.dest))
         .pipe(bs.reload({ stream: true }));
 });
 

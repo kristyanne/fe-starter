@@ -1,28 +1,37 @@
 /**
- * Configuration settings for the project gulp tasks.
+ * Task level configuration values.
  */
+var config = require('.');
+var paths = config.paths;
 
-// Define base paths
-var paths = {
-    src:  './src',
-    dist: './dist'
-};
-
-// Task level configration
-var config = {
-    paths: paths,
-
-    browserify: {
+module.exports = (function() {
+ return {
+    /**
+     * Browserify.
+     *
+     * Javascript Bundler:
+     * http://browserify.org
+     */
+     browserify: {
         src: paths.src + '/js',
         dest: paths.dist + '/js',
         entry: 'main.js',
         output: 'main.bundle.js'
     },
 
+    /**
+     * Browsersync.
+     *
+     * Local development server:
+     * https://browsersync.io
+     */
     browserSync: {
         baseDir: [ paths.dist + '/html', paths.dist ]
     },
 
+    /**
+     * CSS.
+     */
     css: {
         watchSrc:  paths.src + '/scss/**/*.scss',
         src: [
@@ -32,6 +41,11 @@ var config = {
         dest: paths.dist + '/css'
     },
 
+    /**
+     * CSS Linting.
+     *
+     * http://stylelint.io/
+     */
     csslint: {
         src: [
             paths.src + '/scss/**/*.scss',
@@ -40,6 +54,11 @@ var config = {
         ]
     },
 
+    /**
+     * Javascript Linting.
+     *
+     * http://eslint.org/
+     */
     eslint: {
         src: [
             paths.src + '/js/**/*.js',
@@ -48,11 +67,12 @@ var config = {
         ]
     },
 
-    fonts: {
-        src: paths.src + '/fonts/**/*.{eot,svg,ttf,woff}',
-        dest: paths.dist + '/fonts'
-    },
-
+    /**
+     * HTML.
+     *
+     * gulp-hb:
+     * https://github.com/shannonmoeller/gulp-hb
+     */
     html: {
         path: paths.src + '/html',
         pages: paths.src + '/html/pages/**/*.html',
@@ -62,26 +82,23 @@ var config = {
         dest: paths.dist + '/html'
     },
 
+    /**
+     * SVG Icon Sprite.
+     */
     icons: {
         src: paths.src + '/svg/icons/**/*.svg',
         dest: paths.dist + '/svg',
         yml: './icons.yml'
     },
 
+    /**
+     * Compress Images.
+     *
+     * https://github.com/sindresorhus/gulp-imagemin
+     */
     imagemin: {
         src: paths.src + '/img/**/*.{png,jpg,jpeg,gif,ico}',
         dest: paths.dist + '/img'
-    },
-
-    production: {
-        src: [
-            paths.dist + '/**/*',
-            '!' + paths.dist + '/{html/docs,html/docs/**}',
-            '!' + paths.dist + '/js/**/*.js.map',
-            '!' + paths.dist + '/css/**/*.js.map'
-        ],
-        dest: './production'
     }
-};
-
-module.exports = config;
+ }
+})();
