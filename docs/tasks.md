@@ -30,7 +30,7 @@ To use, open up a terminal window, `cd` into the front end directory (usually fr
 $ gulp build
 ```
 
-### Build for Production
+### Environments
 
 A few of the gulp tasks in this project do slightly different things depending on the environment you are building it for. Currently, the configured environments are `dev`, `qa`, `preview` and `live`. Allowing the gulp tasks to know what environment they are building for can allow us to configure our builds on a per-environment basis. 
 
@@ -51,9 +51,9 @@ Currently, the main differences when building for live will be:
 
 **Production Asset Copying**
 
-Once the production build is complete, the build task will copy the final compiled assets into a directory specified in the gulp config file (`./gulp/config.js`) in the `production` object.
+For some CMS based projects, the compiled assets need to be copied over to another directory to be used by the back-end templates. If this is the case, when running the build in `qa`, `preview` or `live` mode (see above), the gulp task will check if the production config exists (see below) and if it does, Once the build is complete, the build task will copy the final compiled assets into a directory specified in the gulp config file (`./gulp/config/tasks.js`) in the `production` object.
 
-Please remember to update the production path on a per project basis as it's name will change.
+Please remember to update the production path on a per project basis as it's location will change.
 
 If you **do not** wish to do this, change the production config to the following:
 
@@ -62,7 +62,6 @@ production: false
 ```
 
 This will tell gulp not to copy any assets over once a production build has been completed.
-
 
 ### Browserify
 
