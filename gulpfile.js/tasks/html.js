@@ -9,9 +9,12 @@ var hb = require('gulp-hb');
 var bs = require('browser-sync');
 var handleError  = require('../lib/handleError');
 var size = require('gulp-size');
+var config = require('../config');
 var taskConfig = require('../config/tasks').html;
 
 gulp.task('html', function() {
+    console.log(config);
+
     var hbStream = hb({
         bustCache: true,
         debug: false,
@@ -26,7 +29,12 @@ gulp.task('html', function() {
     .helpers(taskConfig.helpers)
 
     // Template Data
-    .data(taskConfig.data);
+    //
+    // 1. Pass the current evironment (dev, qa etc) to the templates.
+    .data(taskConfig.data)
+    .data({
+        env: config.env // [1]
+    })
 
     return gulp.src(taskConfig.pages)
         .pipe(hbStream)

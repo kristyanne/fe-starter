@@ -99,6 +99,27 @@ The [stylelint](https://github.com/stylelint/stylelint) configuration is defined
 $ gulp css
 ```
 
+### HTML
+
+`./gulp/tasks/html.js`
+
+This project uses [Handlebars](http://handlebarsjs.com) as the templating language and the static HTML is compiled using [gulp-hb](https://github.com/shannonmoeller/gulp-hb).
+
+This task will compile the HTML from our pages/layouts and partials found in the `./src/html` directory of this project.
+
+```sh
+$ gulp html
+```
+
+***Template Data***
+
+This project includes some useful dynamic variables that can be used in templates if needed:
+
+Variable | Description
+----| -----------
+`{{ env }}` | This will output the current environment that has been passed to the Gulp tasks (dev/qa/preview/live).
+
+
 ### Icons
 
 `./gulp/tasks/icons.js`

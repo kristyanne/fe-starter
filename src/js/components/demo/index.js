@@ -1,7 +1,7 @@
 /**
  * Just a demo component, that's all :)
  */
-var utils = require('utils');
+let utils = require('utils');
 
 module.exports = (() => {
     let selectors = {

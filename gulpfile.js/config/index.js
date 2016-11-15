@@ -33,6 +33,6 @@ module.exports = (function() {
          * Return the current build environment.
          * @type {string}
          */
-        env: envs[args.env] || args.dev
+        env: envs[args.env] || envs.dev
     }
 })();
