@@ -115,10 +115,10 @@ $ gulp html
 
 This project includes some useful dynamic variables that can be used in templates if needed:
 
-Variable    | Description
-------------| -----------
-`{{ env }}` | This will output the current environment that has been passed to the Gulp tasks (dev/qa/preview/live).
-
+| Variable    | Description                                                                                                  |
+|-------------|--------------------------------------------------------------------------------------------------------------|
+| `{{ env }}` | This will output the current build environment that has been passed to the Gulp tasks (dev/qa/preview/live). |
+                                                                                                          |
 
 ### Icons
 
