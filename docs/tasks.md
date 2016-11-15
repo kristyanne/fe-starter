@@ -49,7 +49,7 @@ Currently, the main differences when building for live will be:
 - JS will be minified (uglified) and sourcemaps will be excluded.
 - CSS Sourcemaps will not be included.
 
-**Production Asset Copying**
+#### Production Asset Copying
 
 For some CMS based projects, the compiled assets need to be copied over to another directory to be used by the back-end templates. If this is the case, when running the build in `qa`, `preview` or `live` mode (see above), the gulp task will check if the production config exists (see below) and if it does, Once the build is complete, the build task will copy the final compiled assets into a directory specified in the gulp config file (`./gulp/config/tasks.js`) in the `production` object.
 
@@ -111,11 +111,11 @@ This task will compile the HTML from our pages/layouts and partials found in the
 $ gulp html
 ```
 
-***Template Data***
+#### Template Data
 
 This project includes some useful dynamic variables that can be used in templates if needed:
 
-Variable | Description
+Variable    | Description
 ------------| -----------
 `{{ env }}` | This will output the current environment that has been passed to the Gulp tasks (dev/qa/preview/live).
 
