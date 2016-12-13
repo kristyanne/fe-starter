@@ -13,8 +13,6 @@ var config = require('../config');
 var taskConfig = require('../config/tasks').html;
 
 gulp.task('html', function() {
-    console.log(config);
-
     var hbStream = hb({
         bustCache: true,
         debug: false,
