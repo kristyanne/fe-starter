@@ -139,6 +139,16 @@ Another fairly straightforward task, this will compress and copy any images from
 $ gulp images
 ```
 
+### Fonts
+
+`./gulp/tasks/fonts.js`
+
+Copy font (eot, svg, ttf, woff, woff2) assets from ./src/fonts into ./dist/fonts.
+
+```sh
+$ gulp fonts
+```
+
 ### Serve
 
 `./gulp/tasks/serve.js`
