@@ -68,6 +68,14 @@ module.exports = (function() {
     },
 
     /**
+     * Copy Font Assets.
+     */
+    fonts: {
+        src: paths.src + '/fonts/**/*.{eot,svg,ttf,woff,woff2}',
+        dest: paths.dist + '/fonts'
+    },
+
+    /**
      * HTML.
      *
      * gulp-hb:
