@@ -1,7 +1,7 @@
 /**
  * Just a demo component, that's all :)
  */
-const utils = require('utils');
+const utils = require('../../lib/utils');
 
 module.exports = (() => {
     const selectors = {
