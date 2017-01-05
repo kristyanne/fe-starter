@@ -1,6 +1,8 @@
-{{#extend "layouts/base"}}
-{{#content "title"}}Demo Page{{/content}}
+---
+title: "Demo Page"
+---
 
+{{#extend "layouts/base"}}
 {{#content "content"}}
     <div class="grid">
         <p><b>Current Build Env:</b> {{ env }}</p>

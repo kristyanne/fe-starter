@@ -6,9 +6,11 @@
 
 var gulp = require('gulp');
 var hb = require('gulp-hb');
+var fm = require('gulp-front-matter');
 var bs = require('browser-sync');
-var handleError  = require('../lib/handleError');
+var handleError = require('../lib/handleError');
 var size = require('gulp-size');
+
 var config = require('../config');
 var taskConfig = require('../config/tasks').html;
 
@@ -28,13 +30,17 @@ gulp.task('html', function() {
 
     // Template Data
     //
-    // 1. Pass the current evironment (dev, qa etc) to the templates.
+    // 1. Pass the current environment (dev, qa etc) to the templates.
     .data(taskConfig.data)
     .data({
         env: config.env // [1]
     })
 
     return gulp.src(taskConfig.pages)
+        .pipe(fm({
+            property: 'data.frontMatter',
+            remove: true
+        }))
         .pipe(hbStream)
         .on('error', handleError)
         .pipe(gulp.dest(taskConfig.dest))

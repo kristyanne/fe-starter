@@ -119,6 +119,7 @@ This project includes some useful dynamic variables that can be used in template
 |-------------|--------------------------------------------------------------------------------------------------------------|
 | `env` | This will output the current build environment that has been passed to the Gulp tasks (dev/qa/preview/live). |
 
+
 ### Icons
 
 `./gulp/tasks/icons.js`
