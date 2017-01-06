@@ -66,7 +66,7 @@
 }
 
 // DEFAULT.
-@include screen-bigger-than(breakpoint(medium)) {
+@include mq($from: tablet) {
     .grid__row {
         @include grid-row;
     }
@@ -101,7 +101,7 @@
 }
 
 // MEDIUM VIEWPORT ONLY.
-@include screen-between(breakpoint(medium), breakpoint(large)) {
+@include mq($from: tablet, $until: desktop) {
     @for $i from 1 through $grid-columns {
         .medium--span-#{$i} {
             @include grid-span($i);
@@ -124,7 +124,7 @@
 }
 
 // LARGE VIEWPORT ONLY.
-@include screen-bigger-than(breakpoint(large)) {
+@include mq($from: desktop) {
     @for $i from 1 through $grid-columns {
         .large--span-#{$i} {
             @include grid-span($i);
@@ -147,7 +147,7 @@
 }
 
 // SMALL VIEWPORT ONLY.
-@include screen-smaller-than(breakpoint(small, max)) {
+@include mq($until: tablet) {
     .grid {
         padding-left: $grid-gutter-small;
         padding-right: $grid-gutter-small;

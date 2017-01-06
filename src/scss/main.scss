@@ -4,9 +4,11 @@
  * LIBS
  * Bourbon:   http://bourbon.io
  * Normalize: https://github.com/necolas/normalize.css
+ * mq:        https://github.com/sass-mq/sass-mq
  */
 @import 'bourbon';
 @import 'normalize';
+@import './node_modules/sass-mq/mq';
 
 
 
@@ -16,7 +18,7 @@
  */
 @import 'settings/colours';
 @import 'settings/global';
-@import 'settings/breakpoints';
+@import 'settings/mq';
 @import 'settings/grid';
 
 
@@ -29,6 +31,7 @@
 @import 'generic/mixins';
 @import 'generic/global';
 @import 'generic/grid';
+
 
 
 /**
