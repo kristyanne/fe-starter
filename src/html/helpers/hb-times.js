@@ -18,7 +18,7 @@ module.exports.register = function(Handlebars) {
     Handlebars.registerHelper('times', function(num, block) {
         var val = '';
 
-        for(var i = 0; i < num; ++i) {
+        for(var i = 1; i <= num; ++i) {
             val += block.fn(i);
         }
 

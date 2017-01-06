@@ -19,7 +19,6 @@
 @import 'settings/colours';
 @import 'settings/global';
 @import 'settings/mq';
-@import 'settings/grid';
 
 
 
@@ -30,7 +29,8 @@
 @import 'generic/reset';
 @import 'generic/mixins';
 @import 'generic/global';
-@import 'generic/grid';
+@import 'generic/layout';
+@import 'generic/wrapper';
 
 
 
