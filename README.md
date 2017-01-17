@@ -47,7 +47,7 @@ This project is based upon the fe-base project which is is developed and maintai
 
 - [Gulp Starter](https://github.com/vigetlabs/gulp-starter)
 - [HTML5 Boilerplate](https://html5boilerplate.com/)
-- [Google WSK](https://github.com/google/web-starter-kit/blob/master/docs/install.md)
+- [Google WSK](https://github.com/google/web-starter-kit)
 - [idiomatic-css](https://github.com/necolas/idiomatic-css)
 - [inuitcss](https://github.com/inuitcss)
 
