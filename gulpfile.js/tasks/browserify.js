@@ -17,7 +17,7 @@ var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var size = require('gulp-size');
-//var aliasify = require('aliasify');
+var aliasify = require('aliasify');
 
 // Config and Utils.
 var taskConfig = require('../config/tasks').browserify;
@@ -26,7 +26,7 @@ var utils = require('../lib/utils');
 var linter = require('./eslint');
 
 // Lodash Includes.
-var _assign = require('lodash').assign;
+var _assign = require('lodash.assign');
 
 // Define custom browserify config options here.
 //

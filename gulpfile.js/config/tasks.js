@@ -26,7 +26,7 @@ module.exports = (function() {
      * https://browsersync.io
      */
     browserSync: {
-        baseDir: [ paths.dist + '/html', paths.dist ]
+        baseDir: paths.dist
     },
 
     /**
@@ -87,7 +87,7 @@ module.exports = (function() {
         partials: paths.src + '/html/templates/**/*.{html,hbs}',
         helpers: paths.src + '/html/helpers/**/*.js',
         data: paths.src + '/html/data/**/*.{js,json}',
-        dest: paths.dist + '/html'
+        dest: paths.dist
     },
 
     /**

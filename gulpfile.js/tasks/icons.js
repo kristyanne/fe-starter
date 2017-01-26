@@ -22,7 +22,7 @@ gulp.task('icons', function() {
                     dest: '',
                     sprite: 'icons.svg',
                     example: {
-                        dest: '../html/docs/icons.html'
+                        dest: '../docs/icons.html'
                     }
                 }
             },
