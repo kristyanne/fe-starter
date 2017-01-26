@@ -83,7 +83,7 @@ module.exports = (function() {
      */
     html: {
         path: paths.src + '/html',
-        pages: paths.src + '/html/pages/**/*.html',
+        pages: paths.src + '/html/pages/**/*.{html,hbs}',
         partials: paths.src + '/html/templates/**/*.{html,hbs}',
         helpers: paths.src + '/html/helpers/**/*.js',
         data: paths.src + '/html/data/**/*.{js,json}',

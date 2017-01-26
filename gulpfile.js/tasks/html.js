@@ -8,6 +8,7 @@ var gulp = require('gulp');
 var hb = require('gulp-hb');
 var fm = require('gulp-front-matter');
 var bs = require('browser-sync');
+var rename = require('gulp-rename');
 var handleError = require('../lib/handleError');
 var size = require('gulp-size');
 
@@ -25,8 +26,8 @@ gulp.task('html', function() {
     .partials(taskConfig.partials)
 
     // Helpers
+    .helpers(require('handlebars-helpers'))
     .helpers(require('handlebars-layouts'))
-    .helpers(taskConfig.helpers)
 
     // Template Data
     //
@@ -43,6 +44,9 @@ gulp.task('html', function() {
         }))
         .pipe(hbStream)
         .on('error', handleError)
+        .pipe(rename({
+            extname: '.html'
+        }))
         .pipe(gulp.dest(taskConfig.dest))
         .pipe(size({ title: 'compiled html size:' }))
         .pipe(bs.reload({ stream: true }));

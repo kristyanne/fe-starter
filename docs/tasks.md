@@ -113,7 +113,12 @@ $ gulp html
 
 #### Template Data
 
-This project includes some useful dynamic variables that can be used in templates if needed:
+Template data can be be stored in the .json data files (`./src/html/data/`) or via front-matter. This project uses the following tools/libs to compile the html:
+
+- [gulp-hb](https://github.com/shannonmoeller/gulp-hb) to compile Handlebars templates into HTML.
+- [handlebars-helpers](https://github.com/helpers/handlebars-helpers) a handy collection of Handlebars Helpers that can be used in your templates.
+
+This project also includes some useful dynamic variables that can be used in templates where needed:
 
 | Variable    | Description                                                                                                  |
 |-------------|--------------------------------------------------------------------------------------------------------------|
