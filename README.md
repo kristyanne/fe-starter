@@ -16,7 +16,6 @@ Below is an overview of the various tools/features that are used in this project
 - [browserify](http://browserify.org/) to bundle the project's JS and dependencies.
 - [babel](https://babeljs.io/) to compile ES6 JS.
 - [gulp-hb](https://github.com/shannonmoeller/gulp-hb) to compile Handlebars templates to html.
-- [bourbon](http://bourbon.io/) Just a handy mixin lib for sass.
 - [normalize](https://github.com/necolas/normalize.css) to reset/normalise the base site styles.
 
 ## Getting Started
