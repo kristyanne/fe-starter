@@ -34,7 +34,6 @@ gulp.task('css', ['csslint'], function() {
         .pipe(utils.isDev() ? sourcemaps.init() : noop())
         .pipe(sass({
             includePaths: [
-                require('node-bourbon').includePaths,
                 './node_modules/normalize.css'
             ]
         }).on('error', sass.logError))

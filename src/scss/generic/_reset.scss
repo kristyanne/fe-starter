@@ -60,23 +60,9 @@ img[height] { // [1]
 /**
  * <form /> element resets.
  * 1. To override _normalize.css setting.
- * 2. Prevent the zoom on input focus in iOS.
  */
 form {
     input[type='search'] {
         box-sizing: border-box; // [1]
-    }
-
-    select option {
-        font-size: rem(16px); // [2]
-    }
-
-    #{$all-text-inputs} {
-        appearance: none;
-        border: 0;
-        border-radius: 0;
-        box-sizing: border-box;
-        font-size: rem(16px); // [2]
-        width: 100%;
     }
 }

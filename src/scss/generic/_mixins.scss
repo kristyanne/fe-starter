@@ -47,10 +47,9 @@
  * 1. Visually hide an element. This is an accessibile way of "hiding" an element from view
  *    while keeping it focusable (http://snook.ca/archives/html_and_css/hiding-content-for-accessibility)
  *
- * 2. The boubon.io hide-text mixin only works if the element has a width and height so
- *    this one is just better aint it.
+ * 2. Hide the text in an element.
  *
- * 3. http://bourbon.io/docs/#clearfix
+ * 3. http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
  *
  */
 // [1]
@@ -79,6 +78,14 @@
 }
 
 // [3]
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
 .clearfix {
     @include clearfix;
 }
