@@ -123,6 +123,14 @@ module.exports = (function() {
             '!' + paths.dist + '/css/**/*.css.map'
         ],
         dest: './production'
+    },
+
+    /**
+     * Static/Root Assets
+     */
+    static: {
+        src: paths.src + '/static/**',
+        dest: paths.dist
     }
  }
 })();

@@ -13,7 +13,8 @@ var buildTasks = [
     'browserify',
     'icons',
     'images',
-    'fonts'
+    'fonts',
+    'static'
 ];
 
 var productionCopy = (config.env !== config.envs.dev) && config;

@@ -20,10 +20,10 @@ gulp.task('icons', function() {
                         scss: false
                     },
                     dest: '',
-                    sprite: 'icons.svg',
-                    example: {
-                        dest: '../docs/icons.html'
-                    }
+                    sprite: 'icons.svg'
+                    // example: {
+                    //     dest: '../docs/icons.html'
+                    // }
                 }
             },
             shape: {

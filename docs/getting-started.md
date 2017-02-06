@@ -66,6 +66,14 @@ Once this FE code is part of your new project, you will need to follow some cust
 
 4) `gulp/config.js`: Update the production directory in the `production` configuration in this file (if required - see [Building for Production](tasks.md#build-for-production) for more information on this).
 
+5) Replace all instances of `__SITE_NAME__` with the name of your site.
+
+6) Replace all instances of `__SITE_DESCRIPTION__` with a description of your site.
+
+7) Replace all instances of `__SITE_THEME_COLOUR__` with the hex theme colour of your site.
+
+8) Replace all instances of `__SITE_THEME_BACKGROUND__` with the hex background colour of your site.
+
 ## Install Prerequisites
 
 This project has the following requirements:
