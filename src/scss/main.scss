@@ -2,7 +2,6 @@
 
 /**
  * LIBS
- * Bourbon:   http://bourbon.io
  * Normalize: https://github.com/necolas/normalize.css
  * mq:        https://github.com/sass-mq/sass-mq
  */
@@ -15,9 +14,9 @@
  * SETTINGS
  * Global config files.
  */
-@import 'settings/colours';
-@import 'settings/global';
-@import 'settings/mq';
+@import 'settings/settings.colours';
+@import 'settings/settings.global';
+@import 'settings/settings.mq';
 
 
 
@@ -25,12 +24,12 @@
  * GENERIC
  * Base/reset or globally available generic styles.
  */
-@import 'generic/reset';
-@import 'generic/mixins';
-@import 'generic/global';
-@import 'generic/widths';
-@import 'generic/layout';
-@import 'generic/wrapper';
+@import 'generic/generic.reset';
+@import 'generic/generic.mixins';
+@import 'generic/generic.global';
+@import 'generic/generic.widths';
+@import 'generic/generic.layout';
+@import 'generic/generic.wrapper';
 
 
 
@@ -39,12 +38,11 @@
  *
  * HTML element specific (headings, images etc) default styles.
  */
-@import 'elements/headings';
+@import 'elements/elements.headings';
 
 
 
 /**
  * COMPONENTS
  */
-@import 'components/icons';
-// List component imports here.
+@import 'components/components.icons';
