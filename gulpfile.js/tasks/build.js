@@ -17,7 +17,7 @@ var buildTasks = [
     'static'
 ];
 
-var productionCopy = (config.env !== config.envs.dev) && config;
+var productionCopy = (config.env !== config.envs.dev) && taskConfig;
 
 gulp.task('build', buildTasks, function() {
     if(productionCopy) {
