@@ -6,36 +6,29 @@
  */
 
 
-
 /**
  * Generate a font size in rem units from a given pixel value.
+ *
  * This is a bit of a cut down version of the inuit font-size mixin:
  * https://github.com/inuitcss/inuitcss/blob/develop/tools/_tools.font-size.scss
  *
  * 1. Old IE fallback. Maybe not necessary but we'll leave this in for now (stylint doesn't
  *    like it though).
  * 2. Font size in rem units.
- * 3. If line height is auto (default), generate a baseline-compatible line-height.
- * 4. If line height has another value (not false), use that instead.
  *
  * @param $font-size   [size of font needed in pixels. E.g. 16px]
- * @param $line-height [value for line height (optional)]
  */
 /* stylelint-disable */
-@mixin font-size($font-size, $line-height: auto) {
-    font-size: $font-size; // [1]
-    font-size: ($font-size / $project-font-size) * 1rem; // [2]
+@mixin font-size($font-size, $line-height: auto, $important: false) {
+    @if ($important == true) {
+        $important: !important;
+    } @else {
+        $important: null;
+    }
 
-    // [3]
-    @if ($line-height == 'auto') {
-        line-height: ceil($font-size / $project-line-height) * ($project-line-height / $font-size);
-    }
-    // [4]
-    @else {
-        @if ($line-height != false) {
-            line-height: $line-height;
-        }
-    }
+
+    font-size: $font-size $important; // [1]
+    font-size: ($font-size / $project-font-size) * 1rem $important; // [2]
 }
 /* stylelint-enable */
 
@@ -53,19 +46,17 @@
  *
  */
 // [1]
-@mixin visually-hidden {
+@mixin hidden-visually {
     border: 0;
     clip: rect(0 0 0 0);
+    clip-path: inset(50%);
     height: 1px;
     margin: -1px;
     overflow: hidden;
     padding: 0;
     position: absolute;
+    white-space: nowrap;
     width: 1px;
-}
-
-.visually-hidden {
-    @include visually-hidden;
 }
 
 // [2]
@@ -84,8 +75,4 @@
         content: '';
         display: table;
     }
-}
-
-.clearfix {
-    @include clearfix;
 }

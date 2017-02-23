@@ -6,20 +6,16 @@
  * Page-level constraining and wrapping elements.
  *
  * 1. max-width of the wrapper element (px).
- * 2. left and right padding value for the wrapper (px).
  */
 
 // [1]
 $project-wrapper-width: 1366px !default;
 
-// [2]
-$project-wrapper-gutter: $project-spacing !default;
-
-.wrapper {
+.o-wrapper {
     @include clearfix;
 
     margin: 0 auto;
     max-width: $project-wrapper-width;
-    padding-left: $project-wrapper-gutter;
-    padding-right: $project-wrapper-gutter;
+    padding-left: $project-spacing;
+    padding-right: $project-spacing;
 }
