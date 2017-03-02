@@ -3,6 +3,7 @@
  */
 
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var utils = require('../lib/utils');
 var config = require('../config');
 var taskConfig = require('../config/tasks').production;
@@ -23,4 +24,6 @@ gulp.task('build', buildTasks, function() {
     if(productionCopy) {
         gulp.src(taskConfig.src).pipe(gulp.dest(taskConfig.dest));
     }
+
+    gutil.log(gutil.colors.yellow(config.env + ' build complete.'));
 });

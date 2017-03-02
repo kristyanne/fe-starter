@@ -12,7 +12,7 @@ module.exports = (function() {
         },
 
         isDev: function() {
-            return config.env !== config.envs.live;
+            return config.env !== config.envs.prod;
         }
     }
 })();

@@ -13,7 +13,7 @@ module.exports = (function() {
         dev: 'dev',
         qa: 'qa',
         preview: 'preview',
-        live: 'live'
+        prod: 'prod'
     };
 
     /**

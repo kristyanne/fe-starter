@@ -1,6 +1,3 @@
-/**
- * Common JS utility functions.
- */
 module.exports = (() => {
     return {
         /**

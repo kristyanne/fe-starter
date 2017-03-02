@@ -32,26 +32,26 @@ $ gulp build
 
 ### Environments
 
-A few of the gulp tasks in this project do slightly different things depending on the environment you are building it for. Currently, the configured environments are `dev`, `qa`, `preview` and `live`. Allowing the gulp tasks to know what environment they are building for can allow us to configure our builds on a per-environment basis. 
+A few of the gulp tasks in this project do slightly different things depending on the environment you are building it for. Currently, the configured environments are `dev`, `qa`, `preview` and `prod`. Allowing the gulp tasks to know what environment they are building for can allow us to configure our builds on a per-environment basis. 
 
 The default environment will be `dev` so if you're developing the FE locally, you won't need to do anything differently.
 
 When building for an environment, you'll need to specify the env variable when running the gulp task:
 
 ```sh
-$ gulp build --env=live
+$ gulp build --env=prod
 ```
 
 The env flag can be used on any of the tasks in this document, this is not specific to the `build` task.
 
-Currently, the main differences when building for live will be:
+Currently, the main differences when building for production (prod) will be:
 
 - JS will be minified (uglified) and sourcemaps will be excluded.
 - CSS Sourcemaps will not be included.
 
 #### Production Asset Copying
 
-For some CMS based projects, the compiled assets need to be copied over to another directory to be used by the back-end templates. If this is the case, when running the build in `qa`, `preview` or `live` mode (see above), the gulp task will check if the production config exists (see below) and if it does, Once the build is complete, the build task will copy the final compiled assets into a directory specified in the gulp config file (`./gulp/config/tasks.js`) in the `production` object.
+For some CMS based projects, the compiled assets need to be copied over to another directory to be used by the back-end templates. If this is the case, when running the build in `qa`, `preview` or `prod` mode (see above), the gulp task will check if the production config exists (see below) and if it does, Once the build is complete, the build task will copy the final compiled assets into a directory specified in the gulp config file (`./gulp/config/tasks.js`) in the `production` object.
 
 Please remember to update the production path on a per project basis as it's location will change.
 
@@ -122,7 +122,7 @@ This project also includes some useful dynamic variables that can be used in tem
 
 | Variable    | Description                                                                                                  |
 |-------------|--------------------------------------------------------------------------------------------------------------|
-| `env` | This will output the current build environment that has been passed to the Gulp tasks (dev/qa/preview/live). |
+| `env` | This will output the current build environment that has been passed to the Gulp tasks (dev/qa/preview/prod). |
 
 
 ### Icons

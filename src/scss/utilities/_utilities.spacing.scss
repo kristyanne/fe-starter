@@ -15,6 +15,12 @@
  * .u-[padding | margin] {}
  * .u-[padding | margin]-vertical {}
  * .u-[padding | margin]-[top | bottom]-none
+ *
+ * It also creates variants of the above for the project spacing
+ * values declared in `settings.global`. E.g:
+ *
+ * u-[padding | margin]-top-huge {}
+ * u-[padding | margin]-bottom-small {}
  */
 
 $u-spacing-properties: (
