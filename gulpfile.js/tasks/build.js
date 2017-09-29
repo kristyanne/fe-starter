@@ -1,29 +1,16 @@
 /**
  * `gulp build`
+ * Compile all the FE assets.
  */
 
 var gulp = require('gulp');
-var gutil = require('gulp-util');
-var utils = require('../lib/utils');
+var sequence = require('gulp-sequence');
 var config = require('../config');
-var taskConfig = require('../config/tasks').production;
+var buildTasks = require('../config/tasks').buildTasks;
 
-var buildTasks = [
-    'css',
-    'html',
-    'browserify',
-    'icons',
-    'images',
-    'fonts',
-    'static'
-];
+// Add webpack task to build tasks array.
+buildTasks.push('webpack:build');
 
-var productionCopy = (config.env !== config.envs.dev) && taskConfig;
-
-gulp.task('build', buildTasks, function() {
-    if(productionCopy) {
-        gulp.src(taskConfig.src).pipe(gulp.dest(taskConfig.dest));
-    }
-
-    gutil.log(gutil.colors.yellow(config.env + ' build complete.'));
+gulp.task('build', function(cb) {
+    sequence('clean', buildTasks, cb);
 });

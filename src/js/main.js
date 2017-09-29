@@ -1,7 +1,10 @@
-'use strict';
+import demo from './modules/demo';
+import svg4e from 'svg4everybody';
 
-(() => {
-    const components = require('./components');
+// Modules Init.
+demo();
 
-    components.demo.init();
-})();
+// Add SVG Support for legacy browsers that don't support
+// extenal SVG content.
+// https://github.com/jonathantneal/svg4everybody
+svg4e();

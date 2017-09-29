@@ -1,12 +1,24 @@
-@charset 'UTF-8';
+/* ==========================================================================
+   #MAIN
+   ========================================================================== */
+/**
+ * Main project CSS.
+ */
+
 
 /**
  * LIBS
- * Normalize: https://github.com/necolas/normalize.css
- * mq:        https://github.com/sass-mq/sass-mq
+ * mq: https://github.com/sass-mq/sass-mq
  */
-@import 'normalize';
 @import './node_modules/sass-mq/mq';
+
+
+
+/**
+ * TOOLS
+ * Site-wide mixins and functions.
+ */
+@import 'tools/tools.mixins';
 
 
 
@@ -21,17 +33,10 @@
 
 
 /**
- * TOOLS
- * Site-wide mixins and functions.
- */
-@import 'tools/tools.mixins';
-
-
-
-/**
  * GENERIC
  * Base/reset or globally available generic styles.
  */
+@import 'generic/generic.normalize';
 @import 'generic/generic.reset';
 @import 'generic/generic.global';
 
@@ -42,6 +47,7 @@
  * HTML element specific (headings, images etc) default styles.
  */
 @import 'elements/elements.headings';
+@import 'elements/elements.forms';
 
 
 
@@ -67,10 +73,13 @@
 @import 'utilities/utilities.text';
 @import 'utilities/utilities.spacing';
 @import 'utilities/utilities.headings';
+@import 'utilities/utilities.colours';
 
 
 
 /**
  * COMPONENTS
  */
-// List UI specific components here.
+@import 'components/components.button';
+@import 'components/components.site-header';
+

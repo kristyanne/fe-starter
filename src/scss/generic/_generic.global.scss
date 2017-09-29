@@ -1,7 +1,6 @@
 /* ==========================================================================
    #GLOBAL
    ========================================================================== */
-
 /**
  * Global level styles.
  * These should be styles that affect elements site wide (sort of like a project
@@ -17,13 +16,14 @@
  */
 
 html {
-    font-family: $project-font-family;
     font-size: ($project-font-size / 16px) * 1em;
+    letter-spacing: $project-letter-spacing;
     line-height: $project-line-height / $project-font-size;
 }
 
 body {
-    color: $project-font-colour;
+    background-color: #fff;
+    color: $project-text-colour;
 }
 
 /* stylelint-disable */
@@ -40,6 +40,8 @@ fieldset {
 }
 /* stylelint-enable */
 
-a {
+a,
+a[href^='tel'] {
     color: $project-link-colour;
+    text-decoration: none;
 }

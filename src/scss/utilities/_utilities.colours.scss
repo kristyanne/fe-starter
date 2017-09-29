@@ -1,0 +1,40 @@
+/* ==========================================================================
+   #COLOURS
+   ========================================================================== */
+/**
+ * Colour related utility classes/functions.
+ * Project colours defined in `settings.colours`.
+ */
+
+
+/**
+ * Theme Colour Utilities.
+ *
+ * This wil create a set of utility classes for each item in the
+ * UI colour palette map defined in `settings.colours`.
+ *
+ * e.g.
+ * <div class="u-fill-color-primary">Hello</div>
+ * This will apply a background colour to the element of the `primary` colour
+ * map value.
+ *
+ * <p class="u-color-secondary">Hello</p>
+ * This will apply a text colour to the element of the `secondary` colour
+ * map value.
+ */
+$u-color-props: (
+    'fill': 'background-color',
+    'color': 'color'
+);
+
+@each $class, $prop in $u-color-props {
+    @each $ns, $ns-colours in $colours {
+        @each $shade, $hex in $ns-colours {
+            $mod: if(($shade == 'default'), null, '-#{$shade}');
+
+            .u-#{$class}-#{$ns}#{$mod} {
+                #{$prop}: $hex !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+/* ==========================================================================
+   #FONTS
+   ========================================================================== */
+/**
+ * Project font settings.
+ * Extends `settings.global`
+ *
+ * This file will be included by `fonts.scss` which is responsible
+ * for loading and defining the fonts used throughout the project.
+ */
+
+
+
+// Default Font.
+//
+// This value will be defined by default as the global site
+// font. If the project does have webfonts, this value will
+// be replaced by them after the fonts have loaded.
+$project-font: sans-serif;
+
+
+
+// Webfonts.
+//
+// If the project has no webfonts to load. Just remove the
+// variables below.
+//
+// 1. Create a map of the webfonts that need to be loaded for
+//    the project. @font-face declarations will be created
+//    for each of these fonts.
+//
+// 2. The font global family and weight (if fonts loaded).
+//
+// 3. This class is added to the <html /> element by JS
+//    (`modules/fonts/observer.js`) when/if the webfont
+//    is loaded.
+
+// [1]
+$project-webfonts: (
+    'worksans': (
+        regular: normal normal,
+        semibold: bold normal
+    )
+);
+
+$project-webfont-family: 'worksans', sans-serif; // [2]
+$project-webfont-weight: 200;                    // [3]
+$project-webfont-loaded-class: 'fonts-loaded';   // [4]
+

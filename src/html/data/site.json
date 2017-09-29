@@ -7,9 +7,10 @@
         "background": "__SITE_THEME_BACKGROUND__"
     },
     "paths": {
-        "js": "/js",
-        "css": "/css",
-        "img": "/img",
-        "svg": "/svg"
+        "assets": "/assets",
+        "js": "/assets/js",
+        "css": "/assets/css",
+        "img": "/assets/img",
+        "svg": "/assets/svg"
     }
 }

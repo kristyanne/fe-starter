@@ -1,0 +1,10 @@
+/* ==========================================================================
+   #BUTTON
+   ========================================================================== */
+
+.button {
+    background-color: colour(secondary);
+    color: $project-text-colour;
+    display: inline-block;
+    padding: $project-spacing-sm $project-spacing;
+}

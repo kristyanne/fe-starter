@@ -1,7 +1,6 @@
 /* ==========================================================================
    #RESET
    ========================================================================== */
-
 /**
  * Some futher generic global resets to extend normalize.
  *
@@ -12,6 +11,10 @@
 
 html {
     box-sizing: border-box; // [1]
+}
+
+html,
+body {
     min-height: 100%; // [2]
 }
 
@@ -85,4 +88,16 @@ form {
     input[type='search'] {
         box-sizing: border-box; // [1]
     }
+}
+
+
+
+/**
+ * <a /> element resets.
+ *
+ * 1. Force long email addresses to fall onto multiple lines.
+ */
+
+a[href^='mailto:'] {
+    word-break: break-all; // [1]
 }

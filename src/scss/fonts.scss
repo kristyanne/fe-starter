@@ -1,0 +1,63 @@
+/* ==========================================================================
+   #FONTS
+   ========================================================================== */
+/**
+ * Load and define the font declarations for the project.
+ */
+
+
+/**
+ * SETTINGS
+ * Global config files.
+ */
+@import 'settings/settings.fonts';
+
+
+
+/**
+ * TOOLS
+ * Site-wide mixins and functions.
+ */
+@import 'tools/tools.mixins';
+@import 'tools/tools.font-face';
+
+
+
+/**
+ * FONTS CORE.
+ */
+
+// Load Webfonts.
+//
+// Create @font-face declarations for each of the webfonts
+// defined in `settings.fonts`.
+@if variable-exists('project-webfonts') {
+    @each $font, $variants in $project-webfonts {
+        @each $variant, $props in $variants {
+            @include font-face(
+                $font,
+                '../fonts/#{$font}-#{$variant}',
+                nth($props, 1),
+                nth($props, 2),
+                $formats: woff woff2
+            );
+        }
+    }
+}
+
+// Declare global font styles.
+//
+// 1. Default (fallback) font family.
+// 2. The `fonts-loaded` class is added via Javascript (`js/webfonts.js`)
+//    when the webfonts are successfully loaded.
+
+// [1]
+html {
+    font-family: $project-font;
+}
+
+// [2]
+html.fonts-loaded {
+    font-family: $project-webfont-family;
+    font-weight: $project-webfont-weight;
+}

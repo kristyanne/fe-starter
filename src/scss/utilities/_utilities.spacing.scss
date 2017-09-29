@@ -32,15 +32,17 @@ $u-spacing-directions: (
     null: null,
     '-top': '-top',
     '-bottom': '-bottom',
+    '-right': '-right',
+    '-left': '-left',
     '-vertical': '-top' '-bottom',
     '-horizontal': '-left' '-right'
 ) !default;
 
 $u-spacing-sizes: (
     null: $project-spacing,
-    '-medium': $project-spacing-medium,
-    '-large': $project-spacing-large,
-    '-huge': $project-spacing-huge,
+    '-small': $project-spacing-sm,
+    '-medium': $project-spacing-md,
+    '-large': $project-spacing-lg,
     '-none': 0
 ) !default;
 

@@ -1,0 +1,61 @@
+/* ==========================================================================
+   #FONT-FACE
+   ========================================================================== */
+/**
+ * @font-face declaration mixin.
+ */
+
+/**
+ * Mixin to create @font-fae declarations.
+ * Accepts args for weight, style and file formats.
+ *
+ * Example Usage:
+ *
+ * Normal weight and style in woff and woff2 formats:
+ * @include font-face('FontName', '/fonts/webfont-name', normal, normal, $formats: woff woff2);
+ *
+ * Bold weight, normal style in all formats:
+ * @include font-face('FontName', '/fonts/webfont-name-bold', bold, normal);
+ */
+
+
+/* stylelint-disable */
+@mixin font-face(
+    $family,
+    $path,
+    $weight:  'normal',
+    $style:   'normal',
+    $formats: eot woff2 woff ttf svg) {
+
+
+    @font-face {
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        src: font-src($path, $formats);
+    }
+}
+/* stylelint-enable */
+
+
+// Create the `src` attr for the @font-face declaration for the given
+// formats list.
+@function font-src($path, $formats) {
+    $map: (
+        eot:   '#{$path}.eot?#iefix' format('embedded-opentype'),
+        woff2: '#{$path}.woff2' format('woff2'),
+        woff:  '#{$path}.woff' format('woff'),
+        ttf:   '#{$path}.ttf' format('truetype'),
+        svg:   '#{$path}.svg#svgFontName' format('svg')
+    );
+
+    $src: ();
+
+    @each $key, $val in $map {
+        @if index($formats, $key) {
+            $src: append($src, url('#{nth($val, 1)}') nth($val, 2), comma);
+        }
+    }
+
+    @return $src;
+}

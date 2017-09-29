@@ -1,22 +1,19 @@
 /**
  * `gulp csslint`
- *
- * Compile, prefix and minify stylesheets.
+ * CSS linting task.
  */
-
 var gulp = require('gulp');
-var cached = require('gulp-cached');
 var stylelint = require('gulp-stylelint');
-
-var taskConfig = require('../config/tasks').csslint;
+var task = require('../config/tasks').csslint;
 
 gulp.task('csslint', function() {
-    return gulp.src(taskConfig.src)
-        .pipe(cached('csslint'))
+    return gulp.src(task.src)
         .pipe(stylelint({
-            reporters: [
-                { formatter: 'string', console: true }
-            ],
+            reporters: [{
+                failAfterError: false,
+                formatter: 'string',
+                console: true
+            }],
             syntax: 'scss'
         }));
 });

@@ -1,7 +1,6 @@
 /* ==========================================================================
    #GLOBAL
    ========================================================================== */
-
 /**
  * Project level generic configuration settings.
  *
@@ -12,19 +11,37 @@
  */
 
 
-
+// Type
+//
 // Default type styles. These value will be stored against the <html />
 // element (as rem units) to define base font size and line height.
-$project-font-size: 16px;
-$project-line-height: 24px;
+//
+// 1. The default/global font size value.
+// 2. The default/global line height value.
+// 3. The default/global letter spacing value.
+$project-font-size:      16px;   // [1]
+$project-line-height:    30px;   // [2]
+$project-letter-spacing: normal; // [3]
 
 
-// Default font/text attribute styles.
-// Currently, this includes things such as font family and font colour.
-// We can add more values to this list where appropriate.
-$project-font-family: sans-serif;
-$project-font-colour: #333;
-$project-link-colour: #333;
+// Fonts
+//
+// 1. Default (fallback) font.
+// 2. Webfont name and family declaration.
+// 3. The class added to the <html /> element (with JS) when the webfont
+//    has successfully loaded.
+$project-font: sans-serif;                             // [1]
+$project-webfont: 'worksans';                          // [2]
+$project-webfont-family: $project-webfont, sans-serif; // [2]
+$project-webfont-loaded-class: 'fonts-loaded';         // [3]
+
+
+// Colours
+//
+// 1. The default/global text colour.
+// 2. The default/global link colour.
+$project-text-colour: #333;              // [1]
+$project-link-colour: colour(secondary); // [2]
 
 
 // Spacing.
@@ -32,12 +49,20 @@ $project-link-colour: #333;
 // Defining global spacing units allow us to keep consistent gutters
 // (margin,padding) across the elements of the site.
 //
-// For consistent vertical rhythm we'll set the default spacing to be
+// For consistent vertical rhythm, set the default spacing to be
 // the same as the line height but if this doesn't work out for the UI
 // just change the value.
-$project-spacing: $project-line-height !default;
+$project-spacing: 20px !default;
 
-$project-spacing-small:  round($project-spacing * .5);
-$project-spacing-medium: round($project-spacing * 2);
-$project-spacing-large:  round($project-spacing * 3);
-$project-spacing-huge:   round($project-spacing * 4);
+$project-spacing-sm: round($project-spacing * .5);
+$project-spacing-md: round($project-spacing * 2);
+$project-spacing-lg: round($project-spacing * 3);
+
+
+// Components.
+//
+// Add any component specific vars here if they need to be
+// globally available.
+//
+// 1. `site-header`: (Global <header />) height.
+// $c-header-height:    90px; // [1]

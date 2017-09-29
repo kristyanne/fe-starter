@@ -1,17 +1,14 @@
 /**
  * `gulp icons`
- *
  * Create an SVG spritesheet for iconography.
  */
-
 var gulp = require('gulp');
 var sprite = require('gulp-svg-sprite');
-
 var error = require('../lib/handleError');
-var taskConfig = require('../config/tasks').icons;
+var task = require('../config/tasks').icons;
 
 gulp.task('icons', function() {
-    gulp.src(taskConfig.src)
+    gulp.src(task.src)
         .pipe(sprite({
             mode: {
                 symbol: {
@@ -21,16 +18,13 @@ gulp.task('icons', function() {
                     },
                     dest: '',
                     sprite: 'icons.svg'
-                    // example: {
-                    //     dest: '../docs/icons.html'
-                    // }
                 }
             },
             shape: {
                 id: {
                     generator: 'icon-%s'
                 },
-                meta: taskConfig.yml
+                meta: task.yml
             },
             svg: {
                 xmlDeclaration: false,
@@ -38,5 +32,5 @@ gulp.task('icons', function() {
             }
         }))
         .on('error', error)
-        .pipe(gulp.dest(taskConfig.dest))
+        .pipe(gulp.dest(task.dest))
 });

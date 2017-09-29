@@ -1,7 +1,6 @@
 /* ==========================================================================
    #LAYOUT
    ========================================================================== */
-
 /**
  * Grid-like layout system from inuitcss: https://github.com/inuitcss/inuitcss
  *
@@ -82,6 +81,7 @@ $layout-global-font-size: $project-font-size;
 
     @if ($layout-use-markup-fix == false) {
         font-size: 0;
+        letter-spacing: $project-letter-spacing;
     }
 }
 
@@ -101,6 +101,7 @@ $layout-global-font-size: $project-font-size;
 .o-layout__item {
     box-sizing: border-box; /* [1] */
     display: inline-block; /* [2] */
+    letter-spacing: $project-letter-spacing;
     padding-left: $layout-global-spacing-unit; /* [5] */
     vertical-align: top; /* [3] */
     width: 100%; /* [4] */
@@ -110,6 +111,36 @@ $layout-global-font-size: $project-font-size;
         font-size: $layout-global-font-size; /* [6] */
         font-size: 1rem;
         /* stylelint-enable */
+    }
+}
+
+
+
+
+/* Gutter size modifiers.
+   ========================================================================== */
+
+.o-layout--flush {
+    margin-left: 0;
+
+    > .o-layout__item {
+        padding-left: 0;
+    }
+}
+
+.o-layout--medium {
+    margin-left: -$project-spacing-md;
+
+    > .o-layout__item {
+        padding-left: $project-spacing-md;
+    }
+}
+
+.o-layout--small {
+    margin-left: -$project-spacing-sm;
+
+    > .o-layout__item {
+        padding-left: $project-spacing-sm;
     }
 }
 
@@ -139,6 +170,25 @@ $layout-global-font-size: $project-font-size;
     }
 }
 
+
+/**
+ * Stretch all grid items of each row to have an equal-height.
+ * Please be aware that this modifier class doesn't take any effect in IE9 and
+ * below and other older browsers due to the lack of `display: flex` support.
+ */
+
+.o-layout--stretch {
+    display: flex;
+    flex-wrap: wrap;
+
+    > .o-layout__item {
+        display: flex;
+    }
+
+    &.o-layout--center {
+        justify-content: center;
+    }
+}
 
 
 

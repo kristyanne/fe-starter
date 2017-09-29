@@ -1,30 +1,54 @@
 /* ==========================================================================
    #COLOURS
    ========================================================================== */
+/**
+ * Project colour configration.
+ */
+
+
 
 /**
- * Define frequently used project level (e.g. brand) colours.
+ * Brand Colour Palette.
  *
- * Note: Please remove example colours below before use in a project.
+ * Define a primary and secondary colour for the project.
+ * Normally, these are the values would be found in a brand styleguide.
+ *
+ * Primary:
+ * --------
+ * This should be the colour that is used most frequently and
+ * would be considered the main brand identity colour.
+ *
+ * Secondary:
+ * ----------
+ * This should be an accent brand colour and would normally be used
+ * more sparingly in the UI to accent the primary colour.
+ */
+$colour-primary:   #009688;
+$colour-secondary: #ff9800;
+
+
+
+/**
+ * Colour Map.
+ *
+ * Define all the colours used throughout the UI here.
+ * This would normally be shade variations of the above primary and secondary brand colours.
+ *
+ * To retrieve these values, Use the `colour()` function defined in `tools.mixins`.
+ * e.g: { color: colour(teal, tint) }
+ *
+ * Utility classes to colour or fill an element using these values
+ * can also be found in `utilities.colours`.
+ * e.g: <div class="u-fill-primary-tint">Hello</div>
  */
 $colours: (
-    red: (
-        default: #ff0,
-        light: #fe5656
+    primary: (
+        default: $colour-primary,
+        tint: mix($colour-primary, #fff, 50)
+    ),
+    secondary: (
+        default: $colour-secondary,
+        tint: mix($colour-secondary, #fff, 50)
     )
 );
-
-
-
-/**
- * Function to get a colour value from the above map.
- *
- * Example usage:
- *
- * Default colour:  colour(red);
- * Shade selection: colour(red, light);
- */
-@function colour($colour, $shade: 'default') {
-    @return map-get(map-get($colours, $colour), $shade);
-}
 

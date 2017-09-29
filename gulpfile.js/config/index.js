@@ -11,8 +11,6 @@ module.exports = (function() {
      */
     var envs = {
         dev: 'dev',
-        qa: 'qa',
-        preview: 'preview',
         prod: 'prod'
     };
 
@@ -22,7 +20,8 @@ module.exports = (function() {
      */
     var paths = {
         src:  './src',
-        dist: './dist'
+        dist: './dist',
+        assets: './dist/assets'
     };
 
     return {

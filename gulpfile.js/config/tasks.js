@@ -7,22 +7,7 @@ var paths = config.paths;
 module.exports = (function() {
  return {
     /**
-     * Browserify.
-     *
-     * Javascript Bundler:
-     * http://browserify.org
-     */
-     browserify: {
-        src: paths.src + '/js',
-        dest: paths.dist + '/js',
-        entry: 'main.js',
-        output: 'main.bundle.js'
-    },
-
-    /**
      * Browsersync.
-     *
-     * Local development server:
      * https://browsersync.io
      */
     browserSync: {
@@ -33,17 +18,16 @@ module.exports = (function() {
      * CSS.
      */
     css: {
-        watchSrc:  paths.src + '/scss/**/*.scss',
+        watch:  paths.src + '/scss/**/*.scss',
         src: [
             paths.src + '/scss/**/*.scss',
             '!' + paths.src + '/scss/**/_*.scss'
         ],
-        dest: paths.dist + '/css'
+        dest: paths.assets + '/css'
     },
 
     /**
      * CSS Linting.
-     *
      * http://stylelint.io/
      */
     csslint: {
@@ -55,30 +39,15 @@ module.exports = (function() {
     },
 
     /**
-     * Javascript Linting.
-     *
-     * http://eslint.org/
-     */
-    eslint: {
-        src: [
-            paths.src + '/js/**/*.js',
-            '!' + paths.src + '/js/vendor/**',
-            '!' + paths.src + '/js/lib/templates.js'
-        ]
-    },
-
-    /**
-     * Copy Font Assets.
+     * Font Assets.
      */
     fonts: {
-        src: paths.src + '/fonts/**/*.{eot,svg,ttf,woff,woff2}',
-        dest: paths.dist + '/fonts'
+        src: paths.src + '/fonts/**/*',
+        dest: paths.assets + '/fonts'
     },
 
     /**
      * HTML.
-     *
-     * gulp-hb:
      * https://github.com/shannonmoeller/gulp-hb
      */
     html: {
@@ -87,7 +56,8 @@ module.exports = (function() {
         partials: paths.src + '/html/templates/**/*.{html,hbs}',
         helpers: paths.src + '/html/helpers/**/*.js',
         data: paths.src + '/html/data/**/*.{js,json}',
-        dest: paths.dist
+        dest: paths.dist,
+        watch: paths.src + '/html/**/*.{html,hbs}'
     },
 
     /**
@@ -95,42 +65,46 @@ module.exports = (function() {
      */
     icons: {
         src: paths.src + '/svg/icons/**/*.svg',
-        dest: paths.dist + '/svg',
+        dest: paths.assets + '/svg',
         yml: './icons.yml'
     },
 
     /**
      * Compress Images.
-     *
      * https://github.com/sindresorhus/gulp-imagemin
      */
-    imagemin: {
+    images: {
         src: paths.src + '/img/**/*.{png,jpg,jpeg,gif,ico}',
-        dest: paths.dist + '/img'
+        dest: paths.assets + '/img'
     },
 
     /**
-     * Production Config.
-     *
-     * If the assets are required to be copied to another directory
-     * once the build is complete (Usually restricted to CMS projects).
-     */
-    production: {
-        src: [
-            paths.dist + '/**/*',
-            '!' + paths.dist + '/{html/docs,html/docs/**}',
-            '!' + paths.dist + '/js/**/*.js.map',
-            '!' + paths.dist + '/css/**/*.css.map'
-        ],
-        dest: './production'
-    },
-
-    /**
-     * Static/Root Assets
+     * Static/Root Assets.
      */
     static: {
         src: paths.src + '/static/**',
-        dest: paths.dist
-    }
+        dest: paths.assets
+    },
+
+    /**
+     * SVG.
+     */
+    svg: {
+        src: paths.src + '/svg/**/*.svg',
+        dest: paths.assets + '/svg'
+    },
+
+    /**
+     * Array of tasks to be ran for a build.
+     */
+    buildTasks: [
+        'css',
+        'html',
+        'fonts',
+        'icons',
+        'images',
+        'svg',
+        'static'
+    ]
  }
 })();

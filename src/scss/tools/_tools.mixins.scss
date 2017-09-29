@@ -76,3 +76,34 @@
         display: table;
     }
 }
+
+
+
+/**
+ * Function to get a colour value from the map defined in
+ * `settings.colours`.
+ *
+ * Example usage:
+ *
+ * Default colour:  colour(red);
+ * Shade selection: colour(red, light);
+ */
+@function colour($colour, $shade: 'default') {
+    @return map-get(map-get($colours, $colour), $shade);
+}
+
+
+
+/**
+ * Webfont `font-family` declaration.
+ *
+ * If the webfont is loaded (see `fonts.scss`), use the webfont family
+ * decaration defined in `settings.global`.
+ */
+@mixin webfont {
+    font-family: $project-font;
+
+    html.#{$project-webfont-loaded-class} & {
+        font-family: $project-webfont-family;
+    }
+}
