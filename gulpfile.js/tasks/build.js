@@ -3,14 +3,15 @@
  * Compile all the FE assets.
  */
 
-var gulp = require('gulp');
-var sequence = require('gulp-sequence');
-var config = require('../config');
-var buildTasks = require('../config/tasks').buildTasks;
+const gulp = require('gulp');
+const sequence = require('gulp-sequence');
+const build = require('../config/tasks');
+
+const {buildTasks} = build;
 
 // Add webpack task to build tasks array.
 buildTasks.push('webpack:build');
 
-gulp.task('build', function(cb) {
-    sequence('clean', buildTasks, cb);
+gulp.task('build', (cb) => {
+  sequence('clean', buildTasks, cb);
 });

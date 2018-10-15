@@ -3,15 +3,18 @@
  * Optimise and copy image files.
  */
 
-var gulp = require('gulp');
-var imagemin = require('gulp-imagemin');
-var task = require('../config/tasks').images;
+const gulp = require('gulp');
+const imagemin = require('gulp-imagemin');
+const tasks = require('../config/tasks');
 
-gulp.task('images', function() {
-    return gulp.src(task.src)
-        .pipe(imagemin({
-            optimizationLevel: 7,
-            progressive: true
-        }))
-        .pipe(gulp.dest(task.dest));
+gulp.task('images', () => {
+  const {images} = tasks;
+  const {src, dest} = images;
+
+  return gulp.src(src)
+    .pipe(imagemin({
+      optimizationLevel: 7,
+      progressive: true
+    }))
+    .pipe(gulp.dest(dest));
 });

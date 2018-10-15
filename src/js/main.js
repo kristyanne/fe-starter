@@ -1,5 +1,5 @@
-import demo from './modules/demo';
 import svg4e from 'svg4everybody';
+import demo from './modules/demo';
 
 // Modules Init.
 demo();

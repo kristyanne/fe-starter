@@ -11,39 +11,39 @@ const loadedClass = 'fonts-loaded';
 
 // The fonts to load and their variations (weights, styles).
 const fonts = {
-    worksans: [
-        {
-            weight: 400
-        },
-        {
-            weight: 700
-        }
-    ]
+  worksans: [
+    {
+      weight: 400
+    },
+    {
+      weight: 700
+    }
+  ]
 };
 
 export default function observe() {
-    // Check if the fonts have been previously loaded
-    // in the current session.
-    if(sessionStorage.FontsLoaded) {
-        document.documentElement.classList.add(loadedClass);
-        return;
-    }
+  // Check if the fonts have been previously loaded
+  // in the current session.
+  if(sessionStorage.FontsLoaded) {
+    document.documentElement.classList.add(loadedClass);
+    return;
+  }
 
-    // Create observers for each font and it's variations.
-    let observers = [];
+  // Create observers for each font and it's variations.
+  const observers = [];
 
-    Object.keys(fonts).forEach(font => {
-        fonts[font].forEach(options => {
-            observers.push(new FontFaceObserver(font, options).load());
-        });
+  Object.keys(fonts).forEach((font) => {
+    fonts[font].forEach((options) => {
+      observers.push(new FontFaceObserver(font, options).load());
     });
+  });
 
-    // When all fonts are loaded, add a class to the <html/>
-    // node and update the sessionStorage.
-    Promise.all(observers)
-        .then(() => {
-            document.documentElement.classList.add(loadedClass);
-            sessionStorage.FontsLoaded = true;
-        })
-        .catch(() => {});
+  // When all fonts are loaded, add a class to the <html/>
+  // node and update the sessionStorage.
+  Promise.all(observers)
+    .then(() => {
+      document.documentElement.classList.add(loadedClass);
+      sessionStorage.FontsLoaded = true;
+    })
+    .catch(() => {});
 }

@@ -2,35 +2,37 @@
  * `gulp css`
  * Compile, prefix and minify stylesheets.
  */
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
-var bs = require('browser-sync');
-var config = require('../config');
-var task = require('../config/tasks').css;
-var noop  = require('gulp-util').noop;
-var utils = require('../lib/utils');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const bs = require('browser-sync');
+const gutil = require('gulp-util');
+const config = require('../config');
+const task = require('../config/tasks').css;
+const utils = require('../lib/utils');
 
-var cssTask = function() {
-    var processors = [
-        autoprefixer()
-    ];
+const {noop} = gutil;
 
-    if(config.env === config.envs.prod) {
-        processors.push(cssnano());
-    }
+const cssTask = () => {
+  const processors = [
+    autoprefixer()
+  ];
 
-    return gulp.src(task.src)
-        .pipe(utils.isDev() ? sourcemaps.init() : noop())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(postcss(processors))
-        .pipe(utils.isDev() ? sourcemaps.write('./') : noop())
-        .pipe(gulp.dest(task.dest))
-        .pipe(bs.stream());
-}
+  if(config.env === config.envs.prod) {
+    processors.push(cssnano());
+  }
+
+  return gulp.src(task.src)
+    .pipe(utils.isDev() ? sourcemaps.init() : noop())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss(processors))
+    .pipe(utils.isDev() ? sourcemaps.write('./') : noop())
+    .pipe(gulp.dest(task.dest))
+    .pipe(bs.stream());
+};
 
 
 gulp.task('css', ['csslint'], cssTask);

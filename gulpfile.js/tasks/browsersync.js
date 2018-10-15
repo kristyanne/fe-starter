@@ -3,10 +3,10 @@
  * Run local development server (Including middleware and HMR for webpack).
  */
 
-var config = require('../config');
+const config = require('../config');
 
 if(config.env === config.envs.prod) {
-    return;
+  return;
 }
 
 var gulp = require('gulp');
@@ -16,25 +16,25 @@ var webpack = require('webpack');
 var webpackConfig = require('../../webpack.config.js');
 
 var bsTask = function() {
-    var wpConfig = webpackConfig({local: true});
-    var compiler = webpack(wpConfig);
+  var wpConfig = webpackConfig({local: true});
+  var compiler = webpack(wpConfig);
 
-    var server = {
-        server: {
-            baseDir: task.baseDir
-        }
-    };
+  var server = {
+    server: {
+      baseDir: task.baseDir
+    }
+  };
 
-    server.middleware = [
-        require('webpack-dev-middleware')(compiler, {
-            stats: 'errors-only',
-            watchOptions: {},
-            publicPath: wpConfig.output.publicPath
-        }),
-        require('webpack-hot-middleware')(compiler)
-    ];
+  server.middleware = [
+    require('webpack-dev-middleware')(compiler, {
+      stats: 'errors-only',
+      watchOptions: {},
+      publicPath: wpConfig.output.publicPath
+    }),
+    require('webpack-hot-middleware')(compiler)
+  ];
 
-    bs.init(server);
+  bs.init(server);
 }
 
 gulp.task('browsersync', bsTask);

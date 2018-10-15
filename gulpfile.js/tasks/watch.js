@@ -3,21 +3,20 @@
  * Starts local dev server and watches files and folders for changes.
  */
 
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var sequence = require('gulp-sequence');
-var taskConfig = require('../config/tasks');
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const taskConfig = require('../config/tasks');
 
-var watchTask = function() {
-    var tasks = ['css', 'html'];
+const watchTask = () => {
+  const tasks = ['css', 'html'];
 
-    tasks.forEach(function(task) {
-        var path = taskConfig[task].watch;
+  tasks.forEach((task) => {
+    const path = taskConfig[task].watch;
 
-        watch(path, function() {
-            require('./' + task)()
-        });
+    watch(path, () => {
+      require('./' + task)();
     });
-}
+  });
+};
 
 gulp.task('watch', ['browsersync'], watchTask);

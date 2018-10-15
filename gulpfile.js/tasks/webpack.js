@@ -1,36 +1,35 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var webpack = require('webpack');
-var config = require('../config');
-var webpackConfig = require('../../webpack.config.js');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const webpack = require('webpack');
+const config = require('../config');
+const webpackConfig = require('../../webpack.config.js');
 
 // Params to pass to webpack.config.js
-var params = {};
+const params = {};
 
 if(config.env === config.envs.prod) {
-    params.production = true;
+  params.production = true;
 }
-
 
 /**
  * Build.
  * @param  {[type]} cb
  * @return
  */
-gulp.task('webpack:build', function(cb) {
-    var wp = webpackConfig(params);
+gulp.task('webpack:build', (cb) => {
+  const wp = webpackConfig(params);
 
-    webpack(wp, function(error, stats) {
-        if(error) {
-            throw new gutil.PluginError('webpack-build', error);
-        }
+  webpack(wp, (error, stats) => {
+    if(error) {
+      throw new gutil.PluginError('webpack-build', error);
+    }
 
-        gutil.log('[webpack-build]', stats.toString({
-            colors: true
-        }));
+    gutil.log('[webpack-build]', stats.toString({
+      colors: true
+    }));
 
-        cb();
-    });
+    cb();
+  });
 });
 
 
@@ -39,6 +38,6 @@ gulp.task('webpack:build', function(cb) {
  * @param  {[type]} cb
  * @return
  */
-gulp.task('webpack-dev-server', function(cb) {
-    var wp = webpackConfig();
+gulp.task('webpack-dev-server', (cb) => {
+  const wp = webpackConfig();
 });

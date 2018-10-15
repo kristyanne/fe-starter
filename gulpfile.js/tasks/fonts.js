@@ -2,10 +2,10 @@
  * `gulp fonts`
  * Copy font assets found in `./src/fonts`.
  */
-var gulp = require('gulp');
-var task = require('../config/tasks').fonts;
+const gulp = require('gulp');
+const task = require('../config/tasks').fonts;
 
-gulp.task('fonts', function() {
-    return gulp.src(task.src)
-        .pipe(gulp.dest(task.dest));
+gulp.task('fonts', () => {
+  return gulp.src(task.src)
+    .pipe(gulp.dest(task.dest));
 });
