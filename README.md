@@ -13,8 +13,8 @@ Below is an overview of the various tools/features that are used in this project
 - [gulp](http://gulpjs.com/) to build the project assets.
 - [sass](http://sass-lang.com/) to compile CSS.
 - [browsersync](http://www.browsersync.io/) to run a local development server and handle live reloading on file updates.
-- [browserify](http://browserify.org/) to bundle the project's JS and dependencies.
-- [babel](https://babeljs.io/) to compile ES6 JS.
+- [webpack](https://webpack.js.org/) to bundle JS and dependencies.
+- [babel](https://babeljs.io/) to compile JS.
 - [gulp-hb](https://github.com/shannonmoeller/gulp-hb) to compile Handlebars templates to html.
 - [normalize](https://github.com/necolas/normalize.css) to reset/normalise the base site styles.
 
@@ -36,8 +36,8 @@ To compile the front end, start a local server and start watching for changes, o
 
 ```sh
 $ cd project-name/front-end
-$ npm install
-$ gulp watch
+$ yarn
+$ yarn start
 ```
 
 ## Inspiration & Credits

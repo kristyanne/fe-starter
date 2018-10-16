@@ -7,12 +7,10 @@
     "url": "https://github.com/kristyanne/fe-starter.git"
   },
   "author": "Kristy Nolan <kristy.walters@connect-group.com>",
-  "license": "WTFPL",
   "private": true,
   "scripts": {
-    "dev": "gulp",
-    "production": "gulp build --env=prod",
-    "build": "gulp build --env=dev"
+    "start": "gulp",
+    "build": "gulp build --env=prod"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",

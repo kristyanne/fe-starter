@@ -7,7 +7,6 @@ This will cover the basics of what the various files in the root of the project 
 ### .babelrc
 
 This is a configuration file for [Babel](https://babeljs.io/) which is a Javascript transpiler. In a nutshell, Babel will allow us to write our JS in es6 (ES2015) and it will then transpile this into ES5 so that browsers that do not support es6 features can read it.
-In this file, we will tell babel that we want to use Babel with the [ES2015 Preset](http://babeljs.io/docs/plugins/preset-es2015/).
 
 If, for example, you were using this FE as the foundation for a React project, you would add the [React Preset](http://babeljs.io/docs/plugins/preset-react/) to the array of presets in this file so that Babel knows we will be transpiling React JSX syntax.
 
@@ -23,7 +22,7 @@ For sublime users, the [Sublime EditorConfig Plugin](https://github.com/sindreso
 ### .eslintrc
 
 This is the configuration file for [ESLint](http://eslint.org). ESLint is used in the project to lint all the Javascript that is written for the project.
-This file is an extension of the [sindresorhus eslint](https://github.com/sindresorhus/eslint-config-xo) config with some overriding/custom rules for this project.
+This file is an extension of the [airbnb base](https://www.npmjs.com/package/eslint-config-airbnb-base) config with some overriding/custom rules for this project.
 
 ### .gitignore
 

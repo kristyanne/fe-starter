@@ -27,7 +27,7 @@ This includes (but is not limited to) compiling the CSS, JS and HTML and minifyi
 To use, open up a terminal window, `cd` into the front end directory (usually front-end) and type:
 
 ```sh
-$ gulp build
+$ yarn build
 ```
 
 ### Environments
@@ -63,18 +63,18 @@ production: false
 
 This will tell gulp not to copy any assets over once a production build has been completed.
 
-### Browserify
+### Webpack
 
-`./gulp/tasks/browserify.js`
+`./gulp/tasks/webpack.js`
 
-[Browserify](http://browserify.org/) is used in the project to bundle the scripts and their dependencies.
+Webpack is used in the project to bundle the scripts and their dependencies.
 
-This task will firstly run the target file (usually ./src/js/main.js) file through the Javascript linter (currently eslint) and, if this passes the linter, it will run the file through Browserify. The bundled JS file will then be created and put into the dist directory.
+This task will firstly run the target file (usually ./src/js/main.js) file through the Javascript linter (currently eslint) and, if this passes the linter, it will run the file through Webpack. The bundled JS file will then be created and put into the dist directory.
 
 The eslint configuration is defined in `/.eslintrc`. This file is an extension of the [sindresorhus eslint](https://github.com/sindresorhus/eslint-config-xo) config with some overriding/custom rules for this project. The linting configuration allows us to maintain consistent code standards and style across the project so please don't change this file without consulting the other devs first.
 
 ```sh
-$ gulp browserify
+$ gulp webpack
 ```
 
 The JS bundling task can also be ran as an npm task, because why not. The config for this can be found in `./package.json` under the `scripts` object.

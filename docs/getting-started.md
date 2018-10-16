@@ -107,7 +107,7 @@ $ npm install --global gulp
 To install the local/project dependencies, open a terminal window and ensure that you're in the root of the FE directory (commonly /front-end in most projects) and type the following:
 
 ```sh
-$ npm install
+$ yarn
 ```
 
 This will install all the project dependencies that are defined in the `package.json` file.
@@ -118,7 +118,7 @@ Each individual gulp task will be documented in more detail in the [Tasks](tasks
 However, in the spirit of getting up and running, open a terminal window and type the following:
 
 ```sh
-$ gulp watch
+$ yarn start
 ```
 This will start local dev server, serve your files and start watching for changes in .html, .scss and .js files.
 
